@@ -55,14 +55,10 @@
     overflow: auto;
     border-radius: 30px 30px 0 0;
     padding: 40px 0;
-    .info {
-      display: flex;
-      justify-content: space-around;
-      margin-bottom: 30px;
-      span {
-        width: 25%;
-        text-align: center;
-      }
+    .search {
+      width: 90%;
+      max-width: 250px;
+      margin-left: auto;
     }
     .table {
       overflow-x: auto;
@@ -81,53 +77,30 @@
         }
       }
       .stt {
-        width: 5%;
+        width: 7%;
         text-align: center;
       }
-      .service {
-        width: 15.8%;
+      .bookingCode {
+        width: 18%;
       }
-      .status {
-        width: 15.8%;
+      .consultationDay {
+        width: 18%;
       }
-      .advise {
-        width: 15.8%;
+      .implementationDate {
+        width: 19%;
       }
-      .reExamination {
-        width: 15.8%;
+      .receptionist {
+        width: 19%;
       }
-      .adviseDoctor {
-        width: 15.8%;
-      }
-      .performedDoctor {
-        width: 15.8%;
+      .action {
+        width: 18%;
       }
       .item {
         display: flex;
         gap: 10px;
         margin-bottom: 10px;
-      }
-    }
-  }
-  @media (max-width: 912px) {
-    .box {
-      .info {
-        flex-wrap: wrap;
-        gap: 10px;
-        span {
-          width: 48%;
-        }
-      }
-    }
-  }
-  @media (max-width: 428px) {
-    .box {
-      .info {
-        span {
-          b {
-            display: block;
-          }
-        }
+        padding-bottom: 7px;
+        border-bottom: 1px solid #ccc;
       }
     }
   }
