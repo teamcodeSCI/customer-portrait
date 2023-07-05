@@ -1,4 +1,4 @@
-import historySlice from '@/features/history/historySlice';
+import historySlice from '@/features/history/historyDetailSlice';
 import { configureStore } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
 

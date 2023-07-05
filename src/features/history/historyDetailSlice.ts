@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchHistory } from './historyApi';
+import { fetchHistory } from './historyDetailApi';
 import { RootState } from '@/app/store';
 
 interface InitHistory {

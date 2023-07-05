@@ -1,8 +1,12 @@
 import React, { useEffect } from 'react';
 import style from './historyDetail.module.scss';
 import { useAppDispatch, useAppSelector } from '@/app/hook';
-import { historyListSelector, loadedHistorySelector, loadingHistorySelector } from '@/features/history/historySlice';
-import { fetchHistory } from '@/features/history/historyApi';
+import {
+  historyListSelector,
+  loadedHistorySelector,
+  loadingHistorySelector,
+} from '@/features/history/historyDetailSlice';
+import { fetchHistory } from '@/features/history/historyDetailApi';
 
 const HistoryDetail = () => {
   const dispatch = useAppDispatch();

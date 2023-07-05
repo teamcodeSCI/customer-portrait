@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './history.module.scss';
-import HistoryDetail from '@/components/HistoryDetail';
+// import HistoryDetail from '@/components/HistoryDetail';
+import HistoryList from '@/components/HistoryList';
 
 interface HistoryProps {
   isOpenHistory: boolean;
@@ -23,7 +24,7 @@ const History = ({ isOpenHistory, handleOpenHistory }: HistoryProps) => {
         )}
       </div>
       <div className={style['box']}>
-        <HistoryDetail />
+        <HistoryList />
       </div>
     </div>
   );
