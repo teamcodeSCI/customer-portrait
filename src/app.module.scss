@@ -1,28 +1,42 @@
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .app {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #ffdbdb;
   .box {
     position: relative;
     width: 90%;
-    max-width: 800px;
+    max-width: 1280px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
     .profile {
       position: absolute;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
       border-radius: 50%;
-      width: 30%;
+      width: 40%;
+      max-width: 300px;
+      box-shadow: 0 0 32px rgba(0, 0, 0, 0.2);
       img {
         width: 100%;
         height: auto;
         display: block;
         border-radius: 50%;
+        border: 2px solid #ffa6a6;
+        padding: 10px;
+        background: #fff;
       }
     }
     .row {
@@ -33,22 +47,27 @@
     button {
       width: 80%;
       max-width: 200px;
-
       padding: 0;
       border: none;
       background: none;
       cursor: pointer;
       img {
         display: block;
-        width: 70px;
-        height: 70px;
-        margin: 0 auto 5px;
-        border: 1px solid #000;
+        width: 90px;
+        height: 90px;
+        margin: 0 auto 10px;
+        border: 2px solid #ffa6a6;
         border-radius: 50%;
         padding: 15px;
+        background: #fff;
+        box-shadow: 0 0 29px rgba(0, 0, 0, 0.2);
+        &:hover {
+          animation: spin 0.5s linear;
+        }
       }
       span {
         display: block;
+        color: #000;
       }
     }
   }

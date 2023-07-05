@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from './app.module.scss';
 import { motion } from 'framer-motion';
+import History from './pages/History';
 
 function App() {
+  const [isOpenHistory, setIsOpenHistory] = useState<boolean>(false);
+  const handleOpenHistory = () => {
+    setIsOpenHistory(!isOpenHistory);
+  };
   return (
     <div className={style['app']}>
       <div className={style['box']}>
@@ -11,7 +16,6 @@ function App() {
             <img width={828} height={828} src={`${process.env.PUBLIC_URL}/assets/images/profile.jpg`} alt="" />
           </motion.div>
         </div>
-
         <div className={style['row']}>
           <button>
             <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.2 }}>
@@ -120,6 +124,7 @@ function App() {
           </button>
         </div>
       </div>
+      <History handleOpenHistory={handleOpenHistory} isOpenHistory={isOpenHistory} />
     </div>
   );
 }
