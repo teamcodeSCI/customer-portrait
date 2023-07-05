@@ -124,6 +124,7 @@ function App() {
           </button>
         </div>
       </div>
+
       <History handleOpenHistory={handleOpenHistory} isOpenHistory={isOpenHistory} />
     </div>
   );
