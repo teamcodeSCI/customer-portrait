@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchHistory } from './historyDetailApi';
+import { fetchHistory } from './historyApi';
 import { RootState } from '@/app/store';
 
 interface InitHistory {
@@ -9,12 +9,10 @@ interface InitHistory {
 }
 interface HistoryList {
   id: string;
-  service: string;
-  status: string;
-  advise: string;
-  reExamination: string;
-  adviseDoctor: string;
-  performedDoctor: string;
+  bookingCode: string;
+  consultationDay: string;
+  implementationDate: string;
+  receptionist: string;
 }
 
 const initialState: InitHistory = {

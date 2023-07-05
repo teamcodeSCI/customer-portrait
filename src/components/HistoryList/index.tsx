@@ -1,13 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import style from './historyList.module.scss';
 import HistoryListItem from '../HistoryListItem';
 import Search from '../Search';
+import { fetchHistory } from '@/features/history/historyApi';
+import { useAppDispatch, useAppSelector } from '@/app/hook';
+import { historyListSelector, loadedHistorySelector, loadingHistorySelector } from '@/features/history/historySlice';
 
 const HistoryList = () => {
+  const dispatch = useAppDispatch();
+  const loadedHistory = useAppSelector(loadedHistorySelector);
+  const loadingHistory = useAppSelector(loadingHistorySelector);
+  const historyList = useAppSelector(historyListSelector);
+
   const [search, setSearch] = useState<string>('');
   const handleSearch: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setSearch(e.target.value);
   };
+  useEffect(() => {
+    dispatch(fetchHistory());
+  }, [dispatch]);
   return (
     <div className="container">
       <div className={style['search']}>
@@ -24,7 +35,20 @@ const HistoryList = () => {
             <span className={style['action']}>Hành động</span>
           </div>
           <div className={style['content']}>
-            <HistoryListItem />
+            {!loadingHistory
+              ? loadedHistory &&
+                historyList.map((item, idx) => (
+                  <HistoryListItem
+                    key={item.id}
+                    id={item.id}
+                    stt={idx}
+                    bookingCode={item.bookingCode}
+                    consultationDay={item.consultationDay}
+                    implementationDate={item.implementationDate}
+                    receptionist={item.receptionist}
+                  />
+                ))
+              : ''}
           </div>
         </div>
       </div>

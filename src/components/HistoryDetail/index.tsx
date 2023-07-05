@@ -2,19 +2,19 @@ import React, { useEffect } from 'react';
 import style from './historyDetail.module.scss';
 import { useAppDispatch, useAppSelector } from '@/app/hook';
 import {
-  historyListSelector,
-  loadedHistorySelector,
-  loadingHistorySelector,
-} from '@/features/history/historyDetailSlice';
-import { fetchHistory } from '@/features/history/historyDetailApi';
+  historyDetailListSelector,
+  loadedHistoryDetailSelector,
+  loadingHistoryDetailSelector,
+} from '@/features/historyDetail/historyDetailSlice';
+import { fetchDetailHistory } from '@/features/historyDetail/historyDetailApi';
 
 const HistoryDetail = () => {
   const dispatch = useAppDispatch();
-  const loadedHistory = useAppSelector(loadedHistorySelector);
-  const loadingHistory = useAppSelector(loadingHistorySelector);
-  const historyList = useAppSelector(historyListSelector);
+  const loadedHistoryDetail = useAppSelector(loadedHistoryDetailSelector);
+  const loadingHistoryDetail = useAppSelector(loadingHistoryDetailSelector);
+  const historyListDetail = useAppSelector(historyDetailListSelector);
   useEffect(() => {
-    dispatch(fetchHistory());
+    dispatch(fetchDetailHistory());
   }, [dispatch]);
   return (
     <div className="container">
@@ -44,9 +44,9 @@ const HistoryDetail = () => {
             <span className={style['performedDoctor']}>Bác sĩ thực hiện</span>
           </div>
           <div className={style['content']}>
-            {!loadingHistory
-              ? loadedHistory &&
-                historyList.map((item, idx) => (
+            {!loadingHistoryDetail
+              ? loadedHistoryDetail &&
+                historyListDetail.map((item, idx) => (
                   <div key={item.id} className={style['item']}>
                     <span className={style['stt']}>{idx + 1}</span>
                     <span className={style['service']}>{item.service}</span>

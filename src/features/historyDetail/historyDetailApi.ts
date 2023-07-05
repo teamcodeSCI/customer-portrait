@@ -1,11 +1,12 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-export const fetchHistory = createAsyncThunk('history/fetchHistory', async () => {
+export const fetchDetailHistory = createAsyncThunk('history/fetchDetailHistory', async () => {
   return {
     status: true,
     message: 'Success',
     data: [
       {
         id: '1',
+        history_id: '1',
         service: 'Nâng mũi sụn sườn',
         status: 'Đã thực hiện',
         advise: '',
@@ -15,6 +16,7 @@ export const fetchHistory = createAsyncThunk('history/fetchHistory', async () =>
       },
       {
         id: '2',
+        history_id: '1',
         service: 'Nâng mũi',
         status: 'Chưa thực hiện',
         advise: '',
@@ -24,6 +26,7 @@ export const fetchHistory = createAsyncThunk('history/fetchHistory', async () =>
       },
       {
         id: '3',
+        history_id: '1',
         service: 'Cắt mí',
         status: 'Đã thực hiện',
         advise: '',
@@ -33,6 +36,7 @@ export const fetchHistory = createAsyncThunk('history/fetchHistory', async () =>
       },
       {
         id: '4',
+        history_id: '1',
         service: 'Hút mỡ',
         status: 'Đang chờ',
         advise: '',
@@ -42,6 +46,7 @@ export const fetchHistory = createAsyncThunk('history/fetchHistory', async () =>
       },
       {
         id: '5',
+        history_id: '1',
         service: 'Cấy mỡ',
         status: 'Đã thực hiện',
         advise: '',

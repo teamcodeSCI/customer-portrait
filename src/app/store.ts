@@ -1,8 +1,10 @@
-import historySlice from '@/features/history/historyDetailSlice';
+import historySlice from '@/features/history/historySlice';
+import historyDetailSlice from '@/features/historyDetail/historyDetailSlice';
 import { configureStore } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
+  historyDetail: historyDetailSlice.reducer,
   history: historySlice.reducer,
 });
 const store = configureStore({
