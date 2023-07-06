@@ -35,7 +35,39 @@
     margin-bottom: 30px;
     span {
       width: 25%;
-      text-align: center;
+      display: flex;
+
+      gap: 5px;
+    }
+    .date {
+      &::before {
+        content: '';
+        background: url(../../../public/assets/icons/calendar.svg) center 0 no-repeat;
+        background-size: 100%;
+        width: 20px;
+        height: 20px;
+        display: block;
+      }
+    }
+    .bookingCode {
+      &::before {
+        content: '';
+        background: url(../../../public/assets/icons/barcode.svg) center 0 no-repeat;
+        background-size: 100%;
+        width: 20px;
+        height: 20px;
+        display: block;
+      }
+    }
+    .receptionist {
+      &::before {
+        content: '';
+        background: url(../../../public/assets/icons/userIcon.svg) center 0 no-repeat;
+        background-size: 100%;
+        width: 20px;
+        height: 20px;
+        display: block;
+      }
     }
   }
   .table {
@@ -94,10 +126,35 @@
     }
   }
   @media (max-width: 428px) {
+    .box {
+      padding: 40px 0 0;
+      .close {
+        right: 15px;
+        top: -30px;
+        font-size: 18px;
+      }
+    }
     .info {
       span {
-        b {
-          display: block;
+        flex-wrap: wrap;
+      }
+    }
+  }
+  @media (max-width: 320px) {
+    .info {
+      .date {
+        &::before {
+          display: none;
+        }
+      }
+      .bookingCode {
+        &::before {
+          display: none;
+        }
+      }
+      .receptionist {
+        &::before {
+          display: none;
         }
       }
     }

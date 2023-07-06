@@ -60,16 +60,16 @@ const HistoryDetail = ({ handleOpenDetail }: HistoryDetailProps) => {
             ✕
           </button>
           <div className={style['info']}>
-            <span>
+            <span className={style['date']}>
               <b>Ngày tư vấn:</b> 30/06/2023
             </span>
-            <span>
+            <span className={style['date']}>
               <b>Ngày thực hiện:</b> 30/06/2023
             </span>
-            <span>
+            <span className={style['bookingCode']}>
               <b>Mã booking:</b> Booking-009
             </span>
-            <span>
+            <span className={style['receptionist']}>
               <b>Lễ tân tư vấn:</b> Thu Trang
             </span>
           </div>
