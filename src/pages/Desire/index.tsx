@@ -1,8 +1,8 @@
 import React from 'react';
 import style from './customerInfo.module.scss';
 
-const CustomerInfo = () => {
+const Desire = () => {
   return <div className="container"></div>;
 };
 
-export default CustomerInfo;
+export default Desire;

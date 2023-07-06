@@ -4,6 +4,13 @@ import { AnimatePresence, motion } from 'framer-motion';
 import History from './pages/History';
 import CustomerInfo from './pages/CustomerInfo';
 import Modal from './layouts/Modal';
+import Desire from './pages/Desire';
+import Hobby from './pages/Hobby';
+import Finance from './pages/Finance';
+import Family from './pages/Family';
+import Target from './pages/Target';
+import Personality from './pages/Personality';
+import Worries from './pages/Worries';
 
 function App() {
   const [isOpenHistory, setIsOpenHistory] = useState<boolean>(false);
@@ -73,7 +80,7 @@ function App() {
           </button>
         </div>
         <div className={style['row']}>
-          <button>
+          <button onClick={handleOpenWorries}>
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
@@ -90,7 +97,7 @@ function App() {
               <span>Nỗi lo lắng</span>
             </motion.div>
           </button>
-          <button>
+          <button onClick={handleOpenDesire}>
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
@@ -109,7 +116,7 @@ function App() {
           </button>
         </div>
         <div className={style['row']}>
-          <button>
+          <button onClick={handleOpenPersonality}>
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
@@ -127,7 +134,7 @@ function App() {
             </motion.div>
           </button>
           <button></button>
-          <button>
+          <button onClick={handleOpenHobby}>
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
@@ -146,7 +153,7 @@ function App() {
           </button>
         </div>
         <div className={style['row']}>
-          <button>
+          <button onClick={handleOpenFamily}>
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
@@ -164,7 +171,7 @@ function App() {
               <span>Gia đình/ tình trạng hôn nhân</span>
             </motion.div>
           </button>
-          <button>
+          <button onClick={handleOpenFinance}>
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
@@ -183,7 +190,7 @@ function App() {
           </button>
         </div>
         <div className={style['row']}>
-          <button>
+          <button onClick={handleOpenTarget}>
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
@@ -215,7 +222,43 @@ function App() {
       )}
       {isOpenProfile && (
         <AnimatePresence>
-          <CustomerInfo handleOpenProfile={handleOpenProfile} />
+          <Modal page={<CustomerInfo />} title={'Thông tin khách hàng'} closeModal={handleOpenProfile} />
+        </AnimatePresence>
+      )}
+      {isOpenDesire && (
+        <AnimatePresence>
+          <Modal page={<Desire />} title={'Mong muốn'} closeModal={handleOpenDesire} />
+        </AnimatePresence>
+      )}
+      {isOpenHobby && (
+        <AnimatePresence>
+          <Modal page={<Hobby />} title={'Sở thích'} closeModal={handleOpenHobby} />
+        </AnimatePresence>
+      )}
+      {isOpenFinance && (
+        <AnimatePresence>
+          <Modal page={<Finance />} title={'Tài chính'} closeModal={handleOpenFinance} />
+        </AnimatePresence>
+      )}
+      {isOpenTarget && (
+        <AnimatePresence>
+          <Modal page={<Target />} title={'Mục tiêu và nỗi lo cuộc sống'} closeModal={handleOpenTarget} />
+        </AnimatePresence>
+      )}
+      {isOpenFamily && (
+        <AnimatePresence>
+          <Modal page={<Family />} title={'Gia đình/ tình trạng hôn nhân'} closeModal={handleOpenFamily} />
+        </AnimatePresence>
+      )}
+
+      {isOpenPersonality && (
+        <AnimatePresence>
+          <Modal page={<Personality />} title={'Tính cách'} closeModal={handleOpenPersonality} />
+        </AnimatePresence>
+      )}
+      {isOpenWorries && (
+        <AnimatePresence>
+          <Modal page={<Worries />} title={'Nỗi lo lắng'} closeModal={handleOpenWorries} />
         </AnimatePresence>
       )}
     </div>

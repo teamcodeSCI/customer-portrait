@@ -8,7 +8,6 @@ import HistoryListItem from '@/components/HistoryListItem';
 
 const History = () => {
   const dispatch = useAppDispatch();
-
   const loadedHistory = useAppSelector(loadedHistorySelector);
   const loadingHistory = useAppSelector(loadingHistorySelector);
   const historyList = useAppSelector(historyListSelector);
