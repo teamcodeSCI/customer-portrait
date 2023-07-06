@@ -1,72 +1,104 @@
-.info {
+.historyDetail {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  left: 0;
+  bottom: 0;
+  top: 0;
+  width: 100%;
   display: flex;
-  justify-content: space-around;
-  margin-bottom: 30px;
-  span {
-    width: 25%;
-    text-align: center;
-  }
-}
-.table {
-  overflow-x: auto;
-  .main {
-    min-width: 912px;
-  }
-  .header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #000;
-    margin-bottom: 20px;
-    span {
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: all 0.4s linear;
+
+  .box {
+    width: 100%;
+    background: #fff;
+    height: calc(100vh - 70px);
+    overflow: auto;
+    border-radius: 30px 30px 0 0;
+    padding: 60px 0 0;
+    .close {
       font-weight: 600;
+      position: absolute;
+      right: 0;
+      top: -45px;
+      background: #fff;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 0;
     }
   }
-  .stt {
-    width: 5%;
-    text-align: center;
-  }
-  .service {
-    width: 15.8%;
-  }
-  .status {
-    width: 15.8%;
-  }
-  .advise {
-    width: 15.8%;
-  }
-  .reExamination {
-    width: 15.8%;
-  }
-  .adviseDoctor {
-    width: 15.8%;
-  }
-  .performedDoctor {
-    width: 15.8%;
-  }
-  .item {
+  .info {
     display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
-    padding-bottom: 7px;
-    border-bottom: 1px solid #ccc;
-  }
-}
-@media (max-width: 912px) {
-  .info {
-    flex-wrap: wrap;
-    gap: 10px;
+    justify-content: space-around;
+    margin-bottom: 30px;
     span {
-      width: 48%;
+      width: 25%;
+      text-align: center;
     }
   }
-}
-@media (max-width: 428px) {
-  .info {
-    span {
-      b {
-        display: block;
+  .table {
+    overflow-x: auto;
+    .main {
+      min-width: 912px;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #000;
+      margin-bottom: 20px;
+      span {
+        font-weight: 600;
+      }
+    }
+    .stt {
+      width: 5%;
+      text-align: center;
+    }
+    .service {
+      width: 15.8%;
+    }
+    .status {
+      width: 15.8%;
+    }
+    .advise {
+      width: 15.8%;
+    }
+    .reExamination {
+      width: 15.8%;
+    }
+    .adviseDoctor {
+      width: 15.8%;
+    }
+    .performedDoctor {
+      width: 15.8%;
+    }
+    .item {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+      padding-bottom: 7px;
+      border-bottom: 1px solid #ccc;
+    }
+  }
+  @media (max-width: 912px) {
+    .info {
+      flex-wrap: wrap;
+      gap: 10px;
+      span {
+        width: 48%;
+      }
+    }
+  }
+  @media (max-width: 428px) {
+    .info {
+      span {
+        b {
+          display: block;
+        }
       }
     }
   }

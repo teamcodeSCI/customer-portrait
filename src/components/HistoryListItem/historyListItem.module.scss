@@ -16,6 +16,12 @@
 }
 .action {
   width: 18%;
+  color: blue;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 .item {
   display: flex;

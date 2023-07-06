@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import style from './app.module.scss';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import History from './pages/History';
 
 function App() {
@@ -124,8 +124,17 @@ function App() {
           </button>
         </div>
       </div>
-
-      <History handleOpenHistory={handleOpenHistory} isOpenHistory={isOpenHistory} />
+      <div className={style['controlBtn']} onClick={handleOpenHistory}>
+        Lịch sử Thăm khám
+        {!isOpenHistory && (
+          <img width={30} height={30} src={`${process.env.PUBLIC_URL}/assets/icons/arrowUp.svg`} alt="" />
+        )}
+      </div>
+      {isOpenHistory && (
+        <AnimatePresence>
+          <History handleOpenHistory={handleOpenHistory} isOpenHistory={isOpenHistory} />
+        </AnimatePresence>
+      )}
     </div>
   );
 }

@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from './historyListItem.module.scss';
+import HistoryDetail from '@/pages/HistoryDetail';
+import { AnimatePresence } from 'framer-motion';
 
 interface HistoryListItemProps {
   stt: number;
@@ -17,6 +19,11 @@ const HistoryListItem = ({
   implementationDate,
   receptionist,
 }: HistoryListItemProps) => {
+  const [isOpenDetail, setIsOpenDetail] = useState<boolean>(false);
+  const handleOpenDetail: React.MouseEventHandler = () => {
+    setIsOpenDetail(!isOpenDetail);
+  };
+
   return (
     <div className={style['item']}>
       <span className={style['stt']}>{stt + 1}</span>
@@ -24,7 +31,10 @@ const HistoryListItem = ({
       <span className={style['consultationDay']}>{consultationDay}</span>
       <span className={style['implementationDate']}>{implementationDate}</span>
       <span className={style['receptionist']}>{receptionist}</span>
-      <span className={style['action']}>Xem chi tiết</span>
+      <span className={style['action']} onClick={handleOpenDetail}>
+        Xem chi tiết
+      </span>
+      <AnimatePresence>{isOpenDetail && <HistoryDetail handleOpenDetail={handleOpenDetail} />}</AnimatePresence>
     </div>
   );
 };

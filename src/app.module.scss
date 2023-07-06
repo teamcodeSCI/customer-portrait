@@ -6,6 +6,17 @@
     transform: rotate(360deg);
   }
 }
+@keyframes updown {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 .app {
   height: 100vh;
   display: flex;
@@ -69,6 +80,36 @@
         display: block;
         color: #000;
       }
+    }
+  }
+  .controlBtn {
+    position: fixed;
+    bottom: 0;
+    background: #fb5555;
+    color: #fff;
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+    border-radius: 40px 40px 0 0;
+    padding: 7px 25px 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 16px;
+    img {
+      position: absolute;
+      width: 30px;
+      height: auto;
+      transition: all 0.2s linear;
+      display: block;
+      bottom: 100%;
+      animation: updown 1s linear infinite;
+      opacity: 0.4;
+    }
+    span {
+      font-size: 16px;
     }
   }
 }
