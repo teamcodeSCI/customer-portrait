@@ -1,102 +1,48 @@
-.history {
-  position: fixed;
-  background: rgba(0, 0, 0, 0.5);
-  left: 0;
-  bottom: 0;
-  top: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  transition: all 0.4s linear;
-
-  .controlBtn {
-    position: relative;
-    background: var(--primary-icon-color);
-    color: #fff;
-    text-align: center;
-    width: fit-content;
-    margin: 0 auto;
-    border-radius: 40px 40px 0 0;
-    padding: 7px 25px 5px;
-    cursor: pointer;
+.search {
+  width: 90%;
+  max-width: 250px;
+  margin-left: auto;
+}
+.table {
+  overflow-x: auto;
+  .main {
+    min-width: 912px;
+  }
+  .header {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 5px;
-    font-size: 16px;
-    transition: all 0.2s linear;
-    &:hover {
-      background: var(--primary-btn-hover-color);
-    }
-    img {
-      position: absolute;
-      width: 30px;
-      height: auto;
-      transition: all 0.2s linear;
-      display: block;
-      bottom: 100%;
-      animation: updown 1s linear infinite;
-      opacity: 0.4;
-    }
+    gap: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000;
+    margin-bottom: 15px;
     span {
-      font-size: 16px;
+      font-weight: 600;
     }
   }
-  .box {
-    width: 100%;
-    background: #fff;
-    height: 100vh;
-    overflow: auto;
-    border-radius: 30px 30px 0 0;
-    padding: 40px 0;
-    .search {
-      width: 90%;
-      max-width: 250px;
-      margin-left: auto;
-    }
-    .table {
-      overflow-x: auto;
-      .main {
-        min-width: 912px;
-      }
-      .header {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #000;
-        margin-bottom: 15px;
-        span {
-          font-weight: 600;
-        }
-      }
-      .stt {
-        width: 7%;
-        text-align: center;
-      }
-      .bookingCode {
-        width: 18%;
-      }
-      .consultationDay {
-        width: 18%;
-      }
-      .implementationDate {
-        width: 19%;
-      }
-      .receptionist {
-        width: 19%;
-      }
-      .action {
-        width: 18%;
-      }
-      .item {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 10px;
-        padding-bottom: 7px;
-        border-bottom: 1px solid #ccc;
-      }
-    }
+  .stt {
+    width: 7%;
+    text-align: center;
+  }
+  .bookingCode {
+    width: 18%;
+  }
+  .consultationDay {
+    width: 18%;
+  }
+  .implementationDate {
+    width: 19%;
+  }
+  .receptionist {
+    width: 19%;
+  }
+  .action {
+    width: 18%;
+  }
+  .item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid #ccc;
   }
 }

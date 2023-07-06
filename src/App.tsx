@@ -2,12 +2,49 @@ import React, { useState } from 'react';
 import style from './app.module.scss';
 import { AnimatePresence, motion } from 'framer-motion';
 import History from './pages/History';
+import CustomerInfo from './pages/CustomerInfo';
+import Modal from './layouts/Modal';
 
 function App() {
   const [isOpenHistory, setIsOpenHistory] = useState<boolean>(false);
-  const handleOpenHistory = () => {
+
+  const [isOpenProfile, setIsOpenProfile] = useState<boolean>(false);
+  const [isOpenDesire, setIsOpenDesire] = useState<boolean>(false);
+  const [isOpenHobby, setIsOpenHobby] = useState<boolean>(false);
+  const [isOpenFinance, setIsOpenFinance] = useState<boolean>(false);
+  const [isOpenWorries, setIsOpenWorries] = useState<boolean>(false);
+  const [isOpenFamily, setIsOpenFamily] = useState<boolean>(false);
+  const [isOpenTarget, setIsOpenTarget] = useState<boolean>(false);
+  const [isOpenPersonality, setIsOpenPersonality] = useState<boolean>(false);
+
+  const handleOpenHistory: React.MouseEventHandler = () => {
     setIsOpenHistory(!isOpenHistory);
   };
+  const handleOpenProfile: React.MouseEventHandler = () => {
+    setIsOpenProfile(!isOpenProfile);
+  };
+  const handleOpenDesire: React.MouseEventHandler = () => {
+    setIsOpenDesire(!isOpenDesire);
+  };
+  const handleOpenHobby: React.MouseEventHandler = () => {
+    setIsOpenHobby(!isOpenHobby);
+  };
+  const handleOpenFinance: React.MouseEventHandler = () => {
+    setIsOpenFinance(!isOpenFinance);
+  };
+  const handleOpenWorries: React.MouseEventHandler = () => {
+    setIsOpenWorries(!isOpenWorries);
+  };
+  const handleOpenFamily: React.MouseEventHandler = () => {
+    setIsOpenFamily(!isOpenFamily);
+  };
+  const handleOpenTarget: React.MouseEventHandler = () => {
+    setIsOpenTarget(!isOpenTarget);
+  };
+  const handleOpenPersonality: React.MouseEventHandler = () => {
+    setIsOpenPersonality(!isOpenPersonality);
+  };
+
   return (
     <div className={style['app']}>
       <div className={style['box']}>
@@ -17,7 +54,7 @@ function App() {
           </motion.div>
         </div>
         <div className={style['row']}>
-          <button>
+          <button onClick={handleOpenProfile}>
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
@@ -173,7 +210,12 @@ function App() {
       </div>
       {isOpenHistory && (
         <AnimatePresence>
-          <History handleOpenHistory={handleOpenHistory} isOpenHistory={isOpenHistory} />
+          <Modal page={<History />} title={'Lịch sử thăm khám'} closeModal={handleOpenHistory} />
+        </AnimatePresence>
+      )}
+      {isOpenProfile && (
+        <AnimatePresence>
+          <CustomerInfo handleOpenProfile={handleOpenProfile} />
         </AnimatePresence>
       )}
     </div>
