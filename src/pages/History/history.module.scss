@@ -12,7 +12,7 @@
 
   .controlBtn {
     position: relative;
-    background: #fb5555;
+    background: var(--primary-icon-color);
     color: #fff;
     text-align: center;
     width: fit-content;
@@ -25,6 +25,10 @@
     justify-content: center;
     gap: 5px;
     font-size: 16px;
+    transition: all 0.2s linear;
+    &:hover {
+      background: var(--primary-btn-hover-color);
+    }
     img {
       position: absolute;
       width: 30px;
@@ -60,9 +64,9 @@
         display: flex;
         align-items: center;
         gap: 10px;
-        padding-bottom: 15px;
+        padding-bottom: 10px;
         border-bottom: 1px solid #000;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         span {
           font-weight: 600;
         }

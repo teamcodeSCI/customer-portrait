@@ -18,7 +18,12 @@ function App() {
         </div>
         <div className={style['row']}>
           <button>
-            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.2 }}>
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className={style['icon']}
+            >
               <img width={40} height={40} src={`${process.env.PUBLIC_URL}/assets/icons/user.svg`} alt="" />
             </motion.div>
             <motion.div
@@ -32,7 +37,12 @@ function App() {
         </div>
         <div className={style['row']}>
           <button>
-            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 1.6 }}>
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 1.6 }}
+              className={style['icon']}
+            >
               <img width={40} height={40} src={`${process.env.PUBLIC_URL}/assets/icons/sad.svg`} alt="" />
             </motion.div>
             <motion.div
@@ -44,7 +54,12 @@ function App() {
             </motion.div>
           </button>
           <button>
-            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.4 }}>
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.4 }}
+              className={style['icon']}
+            >
               <img width={40} height={40} src={`${process.env.PUBLIC_URL}/assets/icons/star.svg`} alt="" />
             </motion.div>
             <motion.div
@@ -58,7 +73,12 @@ function App() {
         </div>
         <div className={style['row']}>
           <button>
-            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 1.4 }}>
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 1.4 }}
+              className={style['icon']}
+            >
               <img width={40} height={40} src={`${process.env.PUBLIC_URL}/assets/icons/heart.svg`} alt="" />
             </motion.div>
             <motion.div
@@ -71,7 +91,12 @@ function App() {
           </button>
           <button></button>
           <button>
-            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.6 }}>
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.6 }}
+              className={style['icon']}
+            >
               <img width={40} height={40} src={`${process.env.PUBLIC_URL}/assets/icons/like.svg`} alt="" />
             </motion.div>
             <motion.div
@@ -85,9 +110,15 @@ function App() {
         </div>
         <div className={style['row']}>
           <button>
-            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 1.2 }}>
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 1.2 }}
+              className={style['icon']}
+            >
               <img width={40} height={40} src={`${process.env.PUBLIC_URL}/assets/icons/users.svg`} alt="" />
             </motion.div>
+
             <motion.div
               initial={{ translateY: -20, opacity: 0 }}
               animate={{ translateY: 0, opacity: 1 }}
@@ -97,7 +128,12 @@ function App() {
             </motion.div>
           </button>
           <button>
-            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.8 }}>
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.8 }}
+              className={style['icon']}
+            >
               <img width={40} height={40} src={`${process.env.PUBLIC_URL}/assets/icons/money.svg`} alt="" />
             </motion.div>
             <motion.div
@@ -111,7 +147,12 @@ function App() {
         </div>
         <div className={style['row']}>
           <button>
-            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 1 }}>
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 1 }}
+              className={style['icon']}
+            >
               <img width={40} height={40} src={`${process.env.PUBLIC_URL}/assets/icons/check.svg`} alt="" />
             </motion.div>
             <motion.div

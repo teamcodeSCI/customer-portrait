@@ -1,9 +1,9 @@
 @keyframes spin {
   from {
-    transform: rotate(0deg);
+    transform: rotate3d(0, 1, 0, 0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate3d(0, 1, 0, 360deg);
   }
 }
 @keyframes updown {
@@ -22,7 +22,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #ffdbdb;
+  background: var(--primary-bg-color);
   .box {
     position: relative;
     width: 90%;
@@ -45,7 +45,7 @@
         height: auto;
         display: block;
         border-radius: 50%;
-        border: 2px solid #ffa6a6;
+        border: 2px solid var(--primary-border-color);
         padding: 10px;
         background: #fff;
       }
@@ -62,20 +62,30 @@
       border: none;
       background: none;
       cursor: pointer;
-      img {
-        display: block;
+      .icon {
+        border: 2px solid var(--primary-border-color);
+        border-radius: 50%;
+
         width: 90px;
         height: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         margin: 0 auto 10px;
-        border: 2px solid #ffa6a6;
-        border-radius: 50%;
-        padding: 15px;
         background: #fff;
         box-shadow: 0 0 29px rgba(0, 0, 0, 0.2);
+        img {
+          display: block;
+          width: 50%;
+          height: auto;
+        }
         &:hover {
-          animation: spin 0.5s linear;
+          img {
+            animation: spin 0.5s linear;
+          }
         }
       }
+
       span {
         display: block;
         color: #000;
@@ -85,7 +95,7 @@
   .controlBtn {
     position: fixed;
     bottom: 0;
-    background: #fb5555;
+    background: var(--primary-icon-color);
     color: #fff;
     text-align: center;
     width: fit-content;
@@ -98,6 +108,10 @@
     justify-content: center;
     gap: 5px;
     font-size: 16px;
+    transition: all 0.2s linear;
+    &:hover {
+      background: var(--primary-btn-hover-color);
+    }
     img {
       position: absolute;
       width: 30px;
@@ -107,9 +121,6 @@
       bottom: 100%;
       animation: updown 1s linear infinite;
       opacity: 0.4;
-    }
-    span {
-      font-size: 16px;
     }
   }
 }
