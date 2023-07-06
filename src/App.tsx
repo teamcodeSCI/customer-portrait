@@ -11,10 +11,20 @@ import Family from './pages/Family';
 import Target from './pages/Target';
 import Personality from './pages/Personality';
 import Worries from './pages/Worries';
+import { Tooltip } from 'react-tooltip';
 
+const profileData = {
+  name: 'Đoàn Minh Đức',
+  birth: '01/01/2000',
+  address: 'Hoàn Kiếm, Hà Nội',
+  phone: '0985147412',
+  email: 'ducdm@scigroup.com.vn',
+  job: '',
+  status: 'Đang chờ',
+};
+const tooltipStyle = `list-style:none;padding:0;display:flex;flex-direction:column;gap:5px`;
 function App() {
   const [isOpenHistory, setIsOpenHistory] = useState<boolean>(false);
-
   const [isOpenProfile, setIsOpenProfile] = useState<boolean>(false);
   const [isOpenDesire, setIsOpenDesire] = useState<boolean>(false);
   const [isOpenHobby, setIsOpenHobby] = useState<boolean>(false);
@@ -61,7 +71,20 @@ function App() {
           </motion.div>
         </div>
         <div className={style['row']}>
-          <button onClick={handleOpenProfile}>
+          <button
+            onClick={handleOpenProfile}
+            data-tooltip-id="profile-tooltip"
+            data-tooltip-html={`<ul style="${tooltipStyle}">
+                <li>Họ tên: ${profileData.name}</li>
+                <li>Ngày sinh:  ${profileData.birth}</li>
+                <li>Địa chỉ: ${profileData.address}</li>
+                <li>Số điện thoại: ${profileData.phone}</li>
+                <li>Email: ${profileData.email}</li>
+                <li>Nghề nghiệp: ${profileData.job}</li>
+                <li>Trạng thái: ${profileData.status}</li>
+              </ul>`}
+            data-tooltip-delay-show={0}
+          >
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
@@ -78,6 +101,7 @@ function App() {
               <span>Thông tin khách hàng</span>
             </motion.div>
           </button>
+          <Tooltip id="profile-tooltip" />
         </div>
         <div className={style['row']}>
           <button onClick={handleOpenWorries}>
