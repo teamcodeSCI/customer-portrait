@@ -15,12 +15,17 @@ import Target from './pages/Target';
 import { useAppDispatch, useAppSelector } from './app/hook';
 import { customerSelector, loadedCustomerSelector } from './features/customer/customerSlice';
 import { fetchCustomer } from './features/customer/customerApi';
+import { fetchDesire } from './features/desire/desireApi';
+import { desireSelector, loadedDesireSelector } from './features/desire/desireSlice';
 
 function App() {
   const dispatch = useAppDispatch();
   const [isOpenHistory, setIsOpenHistory] = useState<boolean>(false);
   const profileData = useAppSelector(customerSelector);
   const loadedProfile = useAppSelector(loadedCustomerSelector);
+
+  const desireData = useAppSelector(desireSelector);
+  const loadedDesire = useAppSelector(loadedDesireSelector);
 
   let profileArr: any = loadedProfile && Object.values(profileData).map((e) => e);
 
@@ -29,6 +34,7 @@ function App() {
   };
   useEffect(() => {
     dispatch(fetchCustomer());
+    dispatch(fetchDesire());
   }, [dispatch]);
   return (
     <div className={style['app']}>
@@ -59,7 +65,7 @@ function App() {
             title="Mong muốn"
             img={`${process.env.PUBLIC_URL}/assets/icons/star.svg`}
             page={<Desire />}
-            expandData=""
+            expandData={loadedDesire && desireData[0].desire}
             delay={0.4}
           />
         </div>

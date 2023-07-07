@@ -23,13 +23,12 @@ const Card = ({ title, page, expandData, img, delay }: CardProps) => {
         onClick={handleOpenModal}
       >
         <img width={40} height={40} src={img} alt="" />
-
         <div className={style['content']}>
           <span>{title}</span>
           {typeof expandData === 'object' ? (
             <ul>
               {expandData.map((item: any, idx: number) => (
-                <li key={idx}>{item}</li>
+                <li key={idx}>- {item === '' ? '...' : item}</li>
               ))}
             </ul>
           ) : (

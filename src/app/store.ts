@@ -1,4 +1,5 @@
 import customerSlice from '@/features/customer/customerSlice';
+import desireSlice from '@/features/desire/desireSlice';
 import historySlice from '@/features/history/historySlice';
 import historyDetailSlice from '@/features/historyDetail/historyDetailSlice';
 import { configureStore } from '@reduxjs/toolkit';
@@ -8,6 +9,7 @@ const rootReducer = combineReducers({
   historyDetail: historyDetailSlice.reducer,
   history: historySlice.reducer,
   customer: customerSlice.reducer,
+  desire: desireSlice.reducer,
 });
 const store = configureStore({
   reducer: rootReducer,

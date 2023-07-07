@@ -1,8 +1,31 @@
 import React from 'react';
-import style from './customerInfo.module.scss';
+import style from './desire.module.scss';
+import { useAppSelector } from '@/app/hook';
+import { desireSelector, loadedDesireSelector, loadingDesireSelector } from '@/features/desire/desireSlice';
 
 const Desire = () => {
-  return <div className="container"></div>;
+  const desireData = useAppSelector(desireSelector);
+  const loadedDesire = useAppSelector(loadedDesireSelector);
+  const loadingDesire = useAppSelector(loadingDesireSelector);
+  return (
+    <div className="container">
+      <div className={style['box']}>
+        {!loadingDesire
+          ? loadedDesire &&
+            desireData.map((item: any) => (
+              <div key={item.date} className={style['item']}>
+                <p>{item.date}</p>
+                <ul>
+                  {item.desire.map((item: any, idx: number) => (
+                    <li key={idx}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          : ''}
+      </div>
+    </div>
+  );
 };
 
 export default Desire;
