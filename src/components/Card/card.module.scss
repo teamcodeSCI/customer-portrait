@@ -1,0 +1,65 @@
+@keyframes spin {
+  from {
+    transform: rotate3d(0, 1, 0, 0deg);
+  }
+  to {
+    transform: rotate3d(0, 1, 0, 360deg);
+  }
+}
+.card {
+  width: 80%;
+  max-width: 300px;
+  min-height: 100px;
+  position: relative;
+  button {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 7px 15px;
+    cursor: pointer;
+    display: flex;
+    border: 2px solid var(--primary-border-color);
+    border-radius: 8px;
+    min-height: 100px;
+    height: 100%;
+    background: #fff;
+    box-shadow: 0 0 29px rgba(0, 0, 0, 0.2);
+    gap: 20px;
+    text-align: start;
+    overflow: hidden;
+    transition: all 0.2s linear;
+    &:hover {
+      height: auto;
+      z-index: 10;
+      align-items: flex-start;
+    }
+    img {
+      display: block;
+      max-width: 40px;
+      min-width: 40px;
+      width: 50%;
+      height: auto;
+      margin-top: 10px;
+    }
+    &:hover {
+      img {
+        animation: spin 0.5s linear;
+      }
+    }
+    .content {
+      overflow: hidden;
+      align-self: start;
+      ul {
+        list-style: none;
+        padding-left: 0px;
+        font-size: 14px;
+        margin: 0px 0;
+      }
+      span {
+        display: block;
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+  }
+}

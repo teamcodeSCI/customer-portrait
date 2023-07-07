@@ -9,6 +9,7 @@
   flex-direction: column;
   justify-content: flex-end;
   transition: all 0.4s linear;
+  z-index: 999;
   .controlBtn {
     position: relative;
     background: var(--primary-icon-color);
