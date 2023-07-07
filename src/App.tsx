@@ -71,166 +71,198 @@ function App() {
           </motion.div>
         </div>
         <div className={style['row']}>
-          <button
-            onClick={handleOpenProfile}
-            data-tooltip-id="profile-tooltip"
-            data-tooltip-html={`<ul style="${tooltipStyle}">
-                <li>Họ tên: ${profileData.name}</li>
-                <li>Ngày sinh:  ${profileData.birth}</li>
-                <li>Địa chỉ: ${profileData.address}</li>
-                <li>Số điện thoại: ${profileData.phone}</li>
-                <li>Email: ${profileData.email}</li>
-                <li>Nghề nghiệp: ${profileData.job}</li>
-                <li>Trạng thái: ${profileData.status}</li>
-              </ul>`}
-            data-tooltip-delay-show={0}
-          >
-            <motion.div
+          <div className={style['position']}>
+            <motion.button
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.2 }}
-              className={style['icon']}
+              onClick={handleOpenProfile}
             >
               <img width={40} height={40} src={`${process.env.PUBLIC_URL}/assets/icons/user.svg`} alt="" />
-            </motion.div>
-            <motion.div
-              initial={{ translateY: -20, opacity: 0 }}
-              animate={{ translateY: 0, opacity: 1 }}
-              transition={{ delay: 1.8 }}
-            >
-              <span>Thông tin khách hàng</span>
-            </motion.div>
-          </button>
-          <Tooltip id="profile-tooltip" />
+
+              <div className={style['content']}>
+                <span>Thông tin khách hàng</span>
+                <ul>
+                  <li>{profileData.name}</li>
+                  <li>{profileData.birth}</li>
+                  <li>{profileData.phone}</li>
+                  <li>{profileData.email}</li>
+                  <li>{profileData.address}</li>
+                  <li>{profileData.job}</li>
+                  <li>{profileData.status}</li>
+                </ul>
+              </div>
+            </motion.button>
+          </div>
         </div>
         <div className={style['row']}>
-          <button onClick={handleOpenWorries}>
-            <motion.div
+          <div className={style['position']}>
+            <motion.button
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
-              transition={{ delay: 1.6 }}
-              className={style['icon']}
+              transition={{ delay: 0.2 }}
+              onClick={handleOpenWorries}
             >
               <img width={40} height={40} src={`${process.env.PUBLIC_URL}/assets/icons/sad.svg`} alt="" />
-            </motion.div>
-            <motion.div
-              initial={{ translateY: -20, opacity: 0 }}
-              animate={{ translateY: 0, opacity: 1 }}
-              transition={{ delay: 3.2 }}
-            >
-              <span>Nỗi lo lắng</span>
-            </motion.div>
-          </button>
-          <button onClick={handleOpenDesire}>
-            <motion.div
+              <div className={style['content']}>
+                <span>Nỗi lo lắng</span>
+                <ul>
+                  <li>{profileData.name}</li>
+                  <li>{profileData.birth}</li>
+                  <li>{profileData.phone}</li>
+                  <li>{profileData.email}</li>
+                  <li>{profileData.address}</li>
+                  <li>{profileData.job}</li>
+                  <li>{profileData.status}</li>
+                </ul>
+              </div>
+            </motion.button>
+          </div>
+          <div className={style['position']}>
+            <motion.button
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
-              transition={{ delay: 0.4 }}
-              className={style['icon']}
+              transition={{ delay: 0.2 }}
+              onClick={handleOpenDesire}
             >
               <img width={40} height={40} src={`${process.env.PUBLIC_URL}/assets/icons/star.svg`} alt="" />
-            </motion.div>
-            <motion.div
-              initial={{ translateY: -20, opacity: 0 }}
-              animate={{ translateY: 0, opacity: 1 }}
-              transition={{ delay: 2 }}
-            >
-              <span>Mong muốn</span>
-            </motion.div>
-          </button>
+
+              <div className={style['content']}>
+                <span>Mong muốn</span>
+                <ul>
+                  <li>{profileData.name}</li>
+                  <li>{profileData.birth}</li>
+                  <li>{profileData.phone}</li>
+                  <li>{profileData.email}</li>
+                  <li>{profileData.address}</li>
+                  <li>{profileData.job}</li>
+                  <li>{profileData.status}</li>
+                </ul>
+              </div>
+            </motion.button>
+          </div>
         </div>
         <div className={style['row']}>
-          <button onClick={handleOpenPersonality}>
-            <motion.div
+          <div className={style['position']}>
+            <motion.button
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
-              transition={{ delay: 1.4 }}
-              className={style['icon']}
+              transition={{ delay: 0.2 }}
+              onClick={handleOpenPersonality}
             >
               <img width={40} height={40} src={`${process.env.PUBLIC_URL}/assets/icons/heart.svg`} alt="" />
-            </motion.div>
-            <motion.div
-              initial={{ translateY: -20, opacity: 0 }}
-              animate={{ translateY: 0, opacity: 1 }}
-              transition={{ delay: 3 }}
-            >
-              <span>Tính cách</span>
-            </motion.div>
-          </button>
-          <button></button>
-          <button onClick={handleOpenHobby}>
-            <motion.div
+
+              <div className={style['content']}>
+                <span>Tính cách</span>
+                <ul>
+                  <li>{profileData.name}</li>
+                  <li>{profileData.birth}</li>
+                  <li>{profileData.phone}</li>
+                  <li>{profileData.email}</li>
+                  <li>{profileData.address}</li>
+                  <li>{profileData.job}</li>
+                  <li>{profileData.status}</li>
+                </ul>
+              </div>
+            </motion.button>
+          </div>
+          <div className={style['position']}></div>
+          <div className={style['position']}>
+            <motion.button
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
-              transition={{ delay: 0.6 }}
-              className={style['icon']}
+              transition={{ delay: 0.2 }}
+              onClick={handleOpenHobby}
             >
               <img width={40} height={40} src={`${process.env.PUBLIC_URL}/assets/icons/like.svg`} alt="" />
-            </motion.div>
-            <motion.div
-              initial={{ translateY: -20, opacity: 0 }}
-              animate={{ translateY: 0, opacity: 1 }}
-              transition={{ delay: 2.2 }}
-            >
-              <span>Sở thích</span>
-            </motion.div>
-          </button>
+
+              <div className={style['content']}>
+                <span>Sở thích</span>
+                <ul>
+                  <li>{profileData.name}</li>
+                  <li>{profileData.birth}</li>
+                  <li>{profileData.phone}</li>
+                  <li>{profileData.email}</li>
+                  <li>{profileData.address}</li>
+                  <li>{profileData.job}</li>
+                  <li>{profileData.status}</li>
+                </ul>
+              </div>
+            </motion.button>
+          </div>
         </div>
         <div className={style['row']}>
-          <button onClick={handleOpenFamily}>
-            <motion.div
+          <div className={style['position']}>
+            <motion.button
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
-              transition={{ delay: 1.2 }}
-              className={style['icon']}
+              transition={{ delay: 0.2 }}
+              onClick={handleOpenFamily}
             >
               <img width={40} height={40} src={`${process.env.PUBLIC_URL}/assets/icons/users.svg`} alt="" />
-            </motion.div>
 
-            <motion.div
-              initial={{ translateY: -20, opacity: 0 }}
-              animate={{ translateY: 0, opacity: 1 }}
-              transition={{ delay: 2.8 }}
-            >
-              <span>Gia đình/ tình trạng hôn nhân</span>
-            </motion.div>
-          </button>
-          <button onClick={handleOpenFinance}>
-            <motion.div
+              <div className={style['content']}>
+                <span>Gia đình/ tình trạng hôn nhân</span>
+                <ul>
+                  <li>{profileData.name}</li>
+                  <li>{profileData.birth}</li>
+                  <li>{profileData.phone}</li>
+                  <li>{profileData.email}</li>
+                  <li>{profileData.address}</li>
+                  <li>{profileData.job}</li>
+                  <li>{profileData.status}</li>
+                </ul>
+              </div>
+            </motion.button>
+          </div>
+          <div className={style['position']}>
+            <motion.button
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
-              transition={{ delay: 0.8 }}
-              className={style['icon']}
+              transition={{ delay: 0.2 }}
+              onClick={handleOpenFinance}
             >
               <img width={40} height={40} src={`${process.env.PUBLIC_URL}/assets/icons/money.svg`} alt="" />
-            </motion.div>
-            <motion.div
-              initial={{ translateY: -20, opacity: 0 }}
-              animate={{ translateY: 0, opacity: 1 }}
-              transition={{ delay: 2.4 }}
-            >
-              <span>Tài chính</span>
-            </motion.div>
-          </button>
+
+              <div className={style['content']}>
+                <span>Tài chính</span>
+                <ul>
+                  <li>{profileData.name}</li>
+                  <li>{profileData.birth}</li>
+                  <li>{profileData.phone}</li>
+                  <li>{profileData.email}</li>
+                  <li>{profileData.address}</li>
+                  <li>{profileData.job}</li>
+                  <li>{profileData.status}</li>
+                </ul>
+              </div>
+            </motion.button>
+          </div>
         </div>
         <div className={style['row']}>
-          <button onClick={handleOpenTarget}>
-            <motion.div
+          <div className={style['position']}>
+            <motion.button
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
-              transition={{ delay: 1 }}
-              className={style['icon']}
+              transition={{ delay: 0.2 }}
+              onClick={handleOpenTarget}
             >
               <img width={40} height={40} src={`${process.env.PUBLIC_URL}/assets/icons/check.svg`} alt="" />
-            </motion.div>
-            <motion.div
-              initial={{ translateY: -20, opacity: 0 }}
-              animate={{ translateY: 0, opacity: 1 }}
-              transition={{ delay: 2.6 }}
-            >
-              <span>Mục tiêu và nỗi lo cuộc sống</span>
-            </motion.div>
-          </button>
+
+              <div className={style['content']}>
+                <span>Mục tiêu và nỗi lo cuộc sống</span>
+                <ul>
+                  <li>{profileData.name}</li>
+                  <li>{profileData.birth}</li>
+                  <li>{profileData.phone}</li>
+                  <li>{profileData.email}</li>
+                  <li>{profileData.address}</li>
+                  <li>{profileData.job}</li>
+                  <li>{profileData.status}</li>
+                </ul>
+              </div>
+            </motion.button>
+          </div>
         </div>
       </div>
       <div className={style['controlBtn']} onClick={handleOpenHistory}>

@@ -17,6 +17,7 @@
     transform: translateY(0px);
   }
 }
+
 .app {
   min-height: 100vh;
   display: flex;
@@ -30,7 +31,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 50px;
     .profile {
       position: absolute;
       left: 50%;
@@ -53,29 +54,44 @@
     .row {
       width: 100%;
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-around;
     }
-    button {
+    .position {
       width: 80%;
-      max-width: 200px;
-      padding: 0;
-      border: none;
-      background: none;
-      cursor: pointer;
-      .icon {
-        border: 2px solid var(--primary-border-color);
-        border-radius: 50%;
-
-        width: 90px;
-        height: 90px;
+      max-width: 300px;
+      height: 100px;
+      position: relative;
+      button {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        padding: 7px 15px;
+        cursor: pointer;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 10px;
+        border: 2px solid var(--primary-border-color);
+        border-radius: 8px;
+        height: 100%;
         background: #fff;
         box-shadow: 0 0 29px rgba(0, 0, 0, 0.2);
+        gap: 15px;
+        align-items: center;
+        text-align: start;
+        overflow: hidden;
+        transition: all 0.2s linear;
+        opacity: 0.7;
+        &:hover {
+          height: max-content;
+          z-index: 10;
+          align-items: flex-start;
+          opacity: 1;
+          img {
+            margin-top: 20px;
+          }
+        }
         img {
           display: block;
+          max-width: 40px;
+          min-width: 40px;
           width: 50%;
           height: auto;
         }
@@ -84,11 +100,20 @@
             animation: spin 0.5s linear;
           }
         }
-      }
-
-      span {
-        display: block;
-        color: #000;
+        .content {
+          overflow: hidden;
+          align-self: self-start;
+          ul {
+            padding-left: 18px;
+            font-size: 14px;
+            margin: 0px 0;
+          }
+          span {
+            display: block;
+            font-size: 16px;
+            font-weight: 600;
+          }
+        }
       }
     }
   }
