@@ -22,10 +22,8 @@ function App() {
   const profileData = useAppSelector(customerSelector);
   const loadedProfile = useAppSelector(loadedCustomerSelector);
 
-  let profileArr: any = [];
-  if (loadedProfile) {
-    profileArr = Object.values(profileData).map((e) => e);
-  }
+  let profileArr: any = loadedProfile && Object.values(profileData).map((e) => e);
+
   const handleOpenHistory: React.MouseEventHandler = () => {
     setIsOpenHistory(!isOpenHistory);
   };
@@ -46,6 +44,7 @@ function App() {
             img={`${process.env.PUBLIC_URL}/assets/icons/user.svg`}
             page={<CustomerInfo />}
             expandData={profileArr}
+            delay={0.2}
           />
         </div>
         <div className={style['row']}>
@@ -54,12 +53,14 @@ function App() {
             img={`${process.env.PUBLIC_URL}/assets/icons/sad.svg`}
             page={<Worries />}
             expandData=""
+            delay={1.6}
           />
           <Card
             title="Mong muốn"
             img={`${process.env.PUBLIC_URL}/assets/icons/star.svg`}
             page={<Desire />}
             expandData=""
+            delay={0.4}
           />
         </div>
         <div className={style['row']}>
@@ -68,6 +69,7 @@ function App() {
             img={`${process.env.PUBLIC_URL}/assets/icons/heart.svg`}
             page={<Personality />}
             expandData=""
+            delay={1.4}
           />
           <div className={style['position']}></div>
           <Card
@@ -75,6 +77,7 @@ function App() {
             img={`${process.env.PUBLIC_URL}/assets/icons/like.svg`}
             page={<Hobby />}
             expandData=""
+            delay={0.6}
           />
         </div>
         <div className={style['row']}>
@@ -83,12 +86,14 @@ function App() {
             img={`${process.env.PUBLIC_URL}/assets/icons/users.svg`}
             page={<Family />}
             expandData=""
+            delay={1.2}
           />
           <Card
             title="Tài chính"
             img={`${process.env.PUBLIC_URL}/assets/icons/money.svg`}
             page={<Finance />}
             expandData=""
+            delay={0.8}
           />
         </div>
         <div className={style['row']}>
@@ -97,6 +102,7 @@ function App() {
             img={`${process.env.PUBLIC_URL}/assets/icons/check.svg`}
             page={<Target />}
             expandData=""
+            delay={1}
           />
         </div>
       </div>

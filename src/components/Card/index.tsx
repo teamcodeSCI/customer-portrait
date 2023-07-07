@@ -7,8 +7,9 @@ interface CardProps {
   page: JSX.Element;
   expandData: any;
   img: string;
+  delay: number;
 }
-const Card = ({ title, page, expandData, img }: CardProps) => {
+const Card = ({ title, page, expandData, img, delay }: CardProps) => {
   const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
   const handleOpenModal: React.MouseEventHandler = () => {
     setIsOpenModal(!isOpenModal);
@@ -18,7 +19,7 @@ const Card = ({ title, page, expandData, img }: CardProps) => {
       <motion.button
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
-        transition={{ delay: 0.2 }}
+        transition={{ delay: delay }}
         onClick={handleOpenModal}
       >
         <img width={40} height={40} src={img} alt="" />
