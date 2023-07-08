@@ -21,7 +21,7 @@ const Search = ({ onChange, value }: SearchProps) => {
     <motion.div
       onFocus={handleFocus}
       onBlur={handleBlur}
-      animate={{ borderColor: isFocused ? 'blue' : '#ccc' }}
+      animate={{ borderColor: isFocused ? 'var(--primary-btn-hover-color)' : '#ccc' }}
       transition={{ duration: 0.3 }}
       className={style['search']}
     >

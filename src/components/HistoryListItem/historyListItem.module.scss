@@ -16,7 +16,7 @@
 }
 .action {
   width: 18%;
-  color: blue;
+  color: var(--primary-btn-hover-color);
   cursor: pointer;
   transition: all 0.2s linear;
   &:hover {
