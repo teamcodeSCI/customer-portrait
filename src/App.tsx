@@ -17,6 +17,18 @@ import { customerSelector, loadedCustomerSelector } from './features/customer/cu
 import { fetchCustomer } from './features/customer/customerApi';
 import { fetchDesire } from './features/desire/desireApi';
 import { desireSelector, loadedDesireSelector } from './features/desire/desireSlice';
+import { fetchHobby } from './features/hobby/hobbyApi';
+import { hobbySelector, loadedHobbySelector } from './features/hobby/hobbySlice';
+import { fetchFinance } from './features/finance/financeApi';
+import { financeSelector, loadedFinanceSelector } from './features/finance/financeSlice';
+import { fetchTarget } from './features/target/targetApi';
+import { loadedTargetSelector, targetSelector } from './features/target/targetSlice';
+import { fetchFamily } from './features/family/familyApi';
+import { familySelector, loadedFamilySelector } from './features/family/familySlice';
+import { loadedPersonalitySelector, personalitySelector } from './features/personality/personalitySlice';
+import { fetchPersonality } from './features/personality/personalityApi';
+import { fetchWorry } from './features/worry/worryApi';
+import { loadedWorrySelector, worrySelector } from './features/worry/worrySlice';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -27,6 +39,24 @@ function App() {
   const desireData = useAppSelector(desireSelector);
   const loadedDesire = useAppSelector(loadedDesireSelector);
 
+  const hobbyData = useAppSelector(hobbySelector);
+  const loadedHobby = useAppSelector(loadedHobbySelector);
+
+  const financeData = useAppSelector(financeSelector);
+  const loadedFinance = useAppSelector(loadedFinanceSelector);
+
+  const targetData = useAppSelector(targetSelector);
+  const loadedTarget = useAppSelector(loadedTargetSelector);
+
+  const familyData = useAppSelector(familySelector);
+  const loadedFamily = useAppSelector(loadedFamilySelector);
+
+  const personalityData = useAppSelector(personalitySelector);
+  const loadedPersonality = useAppSelector(loadedPersonalitySelector);
+
+  const worryData = useAppSelector(worrySelector);
+  const loadedWorry = useAppSelector(loadedWorrySelector);
+
   let profileArr: any = loadedProfile && Object.values(profileData).map((e) => e);
 
   const handleOpenHistory: React.MouseEventHandler = () => {
@@ -35,6 +65,12 @@ function App() {
   useEffect(() => {
     dispatch(fetchCustomer());
     dispatch(fetchDesire());
+    dispatch(fetchHobby());
+    dispatch(fetchFinance());
+    dispatch(fetchTarget());
+    dispatch(fetchFamily());
+    dispatch(fetchPersonality());
+    dispatch(fetchWorry());
   }, [dispatch]);
   return (
     <div className={style['app']}>
@@ -58,7 +94,7 @@ function App() {
             title="Nỗi lo lắng"
             img={`${process.env.PUBLIC_URL}/assets/icons/sad.svg`}
             page={<Worries />}
-            expandData=""
+            expandData={loadedWorry && worryData[0].desire}
             delay={1.6}
           />
           <Card
@@ -74,7 +110,7 @@ function App() {
             title="Tính cách"
             img={`${process.env.PUBLIC_URL}/assets/icons/heart.svg`}
             page={<Personality />}
-            expandData=""
+            expandData={loadedPersonality && personalityData[0].desire}
             delay={1.4}
           />
           <div className={style['position']}></div>
@@ -82,7 +118,7 @@ function App() {
             title="Sở thích"
             img={`${process.env.PUBLIC_URL}/assets/icons/like.svg`}
             page={<Hobby />}
-            expandData=""
+            expandData={loadedHobby && hobbyData[0].desire}
             delay={0.6}
           />
         </div>
@@ -91,14 +127,14 @@ function App() {
             title="Gia đình/tình trạng hôn nhân"
             img={`${process.env.PUBLIC_URL}/assets/icons/users.svg`}
             page={<Family />}
-            expandData=""
+            expandData={loadedFamily && familyData[0].desire}
             delay={1.2}
           />
           <Card
             title="Tài chính"
             img={`${process.env.PUBLIC_URL}/assets/icons/money.svg`}
             page={<Finance />}
-            expandData=""
+            expandData={loadedFinance && financeData[0].desire}
             delay={0.8}
           />
         </div>
@@ -107,7 +143,7 @@ function App() {
             title="Mục tiêu và nỗi lo cuộc sống"
             img={`${process.env.PUBLIC_URL}/assets/icons/check.svg`}
             page={<Target />}
-            expandData=""
+            expandData={loadedTarget && targetData[0].desire}
             delay={1}
           />
         </div>
