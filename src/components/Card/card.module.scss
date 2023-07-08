@@ -11,6 +11,7 @@
   max-width: 300px;
   min-height: 110px;
   position: relative;
+
   button {
     position: absolute;
     top: 0;
@@ -27,6 +28,18 @@
     text-align: start;
     overflow: hidden;
     transition: all 0.2s linear;
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 30px;
+      left: 0;
+      bottom: 0;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.9));
+      z-index: 10;
+      border-radius: 0 0 8px 8px;
+    }
     &:hover {
       height: 200px;
       z-index: 10;
