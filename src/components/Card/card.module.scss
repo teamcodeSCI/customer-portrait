@@ -7,7 +7,7 @@
   }
 }
 .card {
-  width: 80%;
+  width: 100%;
   max-width: 300px;
   min-height: 105px;
   position: relative;
@@ -32,6 +32,7 @@
       height: auto;
       z-index: 10;
       align-items: flex-start;
+      max-height: 200px;
     }
     img {
       display: block;

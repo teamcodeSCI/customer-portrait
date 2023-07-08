@@ -11,6 +11,7 @@
 }
 
 .app {
+  padding: 40px 0;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -84,6 +85,34 @@
       bottom: 100%;
       animation: updown 1s linear infinite;
       opacity: 0.4;
+    }
+  }
+  @media (max-width: 1440px) {
+    .box {
+      gap: 20px;
+    }
+  }
+  @media (max-width: 1180px) {
+    .profile {
+      display: none;
+    }
+  }
+  @media (max-width: 912px) {
+    .box {
+      .row {
+        justify-content: center;
+        gap: 20px;
+      }
+    }
+    .position {
+      display: none;
+    }
+  }
+  @media (max-width: 767px) {
+    .box {
+      .row {
+        flex-wrap: wrap;
+      }
     }
   }
 }
