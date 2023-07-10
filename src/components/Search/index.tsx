@@ -3,11 +3,13 @@ import style from './search.module.scss';
 import { motion } from 'framer-motion';
 
 interface SearchProps {
+  name: string;
   value: string;
+  type: string;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
 }
 
-const Search = ({ onChange, value }: SearchProps) => {
+const Search = ({ onChange, value, name, type }: SearchProps) => {
   const [isFocused, setIsFocused] = useState(false);
 
   const handleFocus = () => {
@@ -25,7 +27,7 @@ const Search = ({ onChange, value }: SearchProps) => {
       transition={{ duration: 0.3 }}
       className={style['search']}
     >
-      <input type="text" placeholder="Tìm kiếm..." onChange={onChange} value={value} />
+      <input type={type} name={name} placeholder="Tìm kiếm..." onChange={onChange} value={value} />
       <button></button>
     </motion.div>
   );

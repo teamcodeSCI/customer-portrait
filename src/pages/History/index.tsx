@@ -6,15 +6,19 @@ import { fetchHistory } from '@/features/history/historyApi';
 import Search from '@/components/Search';
 import HistoryListItem from '@/components/HistoryListItem';
 
+interface SearchState {
+  booking: string;
+  date: string;
+}
 const History = () => {
   const dispatch = useAppDispatch();
   const loadedHistory = useAppSelector(loadedHistorySelector);
   const loadingHistory = useAppSelector(loadingHistorySelector);
   const historyList = useAppSelector(historyListSelector);
 
-  const [search, setSearch] = useState<string>('');
+  const [search, setSearch] = useState<SearchState>({ booking: '', date: '' });
   const handleSearch: React.ChangeEventHandler<HTMLInputElement> = (e) => {
-    setSearch(e.target.value);
+    setSearch({ ...search, [e.target.name]: e.target.value });
   };
 
   useEffect(() => {
@@ -22,8 +26,13 @@ const History = () => {
   }, [dispatch]);
   return (
     <div className="container">
-      <div className={style['search']}>
-        <Search onChange={handleSearch} value={search} />
+      <div className={style['control']}>
+        <div className={style['search']}>
+          <Search type="text" onChange={handleSearch} name="booking" value={search.booking} />
+        </div>
+        <div className={style['search']}>
+          <Search type="date" onChange={handleSearch} name="date" value={search.date} />
+        </div>
       </div>
       <div className={style['table']}>
         <div className={style['main']}>

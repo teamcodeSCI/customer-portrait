@@ -1,7 +1,11 @@
-.search {
-  width: 90%;
-  max-width: 250px;
-  margin-left: auto;
+.control {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  .search {
+    width: 90%;
+    max-width: 200px;
+  }
 }
 .table {
   overflow-x: auto;
