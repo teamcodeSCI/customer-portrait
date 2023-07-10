@@ -15,7 +15,7 @@ const Personality = () => {
     <div className="container">
       <div className={style['wrapper']}>
         <div className={style['img']}>
-          <img width={40} height={40} src={`${process.env.PUBLIC_URL}/assets/icons/sad.svg`} alt="" />
+          <img width={40} height={40} src={`${process.env.PUBLIC_URL}/assets/icons/heart.svg`} alt="" />
         </div>
         <div className={style['box']}>
           {!loadingPersonality
