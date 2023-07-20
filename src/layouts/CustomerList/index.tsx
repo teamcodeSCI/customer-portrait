@@ -2,6 +2,79 @@ import React from 'react';
 import style from './customerList.module.scss';
 import CustomerItem from '@/components/CustomerItem';
 
+const data: any[] = [
+  {
+    id: 1,
+    date: '20/07/2023',
+    department: 'Tiểu phẫu',
+    time: '8:20',
+    name: 'Nguyễn Trà My',
+    customerId: 1,
+    service: '',
+    account: 'KN123',
+    status: 'Đã thanh toán',
+    kip: '',
+    bspt: '',
+    ekip: '',
+  },
+  {
+    id: 2,
+    date: '20/07/2023',
+    department: 'Tiểu phẫu',
+    time: '8:20',
+    name: 'Nguyễn Trà My',
+    customerId: 2,
+    service: '',
+    account: 'KN123',
+    status: 'Đã thanh toán',
+    kip: '',
+    bspt: '',
+    ekip: '',
+  },
+  {
+    id: 3,
+    date: '20/07/2023',
+    department: 'Tiểu phẫu',
+    time: '8:20',
+    name: 'Nguyễn Trà My',
+    customerId: 3,
+    service: '',
+    account: 'KN123',
+    status: 'Đã thanh toán',
+    kip: '',
+    bspt: '',
+    ekip: '',
+  },
+  {
+    id: 4,
+    date: '20/07/2023',
+    department: 'Tiểu phẫu',
+    time: '8:20',
+    name: 'Nguyễn Trà My',
+    customerId: 4,
+    service: '',
+    account: 'KN123',
+    status: 'Đã thanh toán',
+    kip: '',
+    bspt: '',
+    ekip: '',
+  },
+  {
+    id: 5,
+    date: '20/07/2023',
+    department: 'Tiểu phẫu',
+    time: '8:20',
+    name: 'Nguyễn Trà My',
+    customerId: 5,
+    service: '',
+    account: 'KN123',
+    status: 'Đã thanh toán',
+    kip: '',
+    bspt: '',
+    ekip: '',
+  },
+];
+
 const CustomerList = () => {
   return (
     <div className={style['customerList']}>
@@ -29,7 +102,9 @@ const CustomerList = () => {
               </tr>
             </thead>
             <tbody>
-              <CustomerItem />
+              {data.map((item: any, idx: number) => (
+                <CustomerItem key={item.id} {...item} stt={idx + 1} />
+              ))}
             </tbody>
           </table>
         </div>

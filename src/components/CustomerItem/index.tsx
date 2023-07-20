@@ -1,24 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import style from './customerItem.module.scss';
-
-const CustomerItem = () => {
+interface CustomerItemProps {
+  stt: number;
+  id: number;
+  date: string;
+  department: string;
+  time: string;
+  name: string;
+  customerId: number;
+  service: string;
+  account: string;
+  status: string;
+  kip: string;
+  bspt: string;
+  ekip: string;
+}
+const CustomerItem = (props: CustomerItemProps) => {
   return (
     <tr className={style['customerItem']}>
-      <td className={style['stt']}>1</td>
-      <td>20/07/2023</td>
-      <td>Tiểu phẫu</td>
-      <td>8:30</td>
+      <td className={style['stt']}>{props.stt}</td>
+      <td>{props.date}</td>
+      <td>{props.department}</td>
+      <td>{props.time}</td>
       <td className={style['customer']}>
-        <Link to={`/profile/${'1'}`}>Nguyễn Trà My</Link>
+        <Link to={`/profile/${props.customerId}`}>{props.name}</Link>
       </td>
-      <td></td>
-      <td>KN123</td>
-      <td>Đã thanh toán</td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>{props.service}</td>
+      <td>{props.account}</td>
+      <td>{props.status}</td>
+      <td>{props.kip}</td>
+      <td>{props.bspt}</td>
+      <td>{props.ekip}</td>
     </tr>
   );
 };
