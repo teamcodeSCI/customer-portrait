@@ -74,16 +74,15 @@
   @media (max-width: 1180px) {
     padding-top: 15vh;
   }
+
   @media (max-width: 767px) {
     .header {
       margin-bottom: 10px;
       font-size: 17px;
     }
-  }
-  @media (max-width: 320px) {
     &::before {
       width: 200px;
-      height: 160px;
+      height: 120px;
     }
     &::after {
       width: 250px;
