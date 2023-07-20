@@ -30,7 +30,7 @@
     text-transform: uppercase;
     font-weight: 600;
     color: var(--primary-icon-color);
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
   .table {
     overflow: auto;
@@ -59,7 +59,8 @@
   @media (max-width: 1440px) {
     padding-top: 10vh;
     .header {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
+      font-size: 28px;
     }
     &::before {
       width: 300px;
@@ -68,6 +69,25 @@
     &::after {
       width: 400px;
       height: 180px;
+    }
+  }
+  @media (max-width: 1180px) {
+    padding-top: 15vh;
+  }
+  @media (max-width: 767px) {
+    .header {
+      margin-bottom: 10px;
+      font-size: 17px;
+    }
+  }
+  @media (max-width: 320px) {
+    &::before {
+      width: 200px;
+      height: 160px;
+    }
+    &::after {
+      width: 250px;
+      height: 110px;
     }
   }
 }
