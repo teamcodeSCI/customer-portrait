@@ -1,0 +1,118 @@
+@keyframes updown {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.app {
+  padding: 40px 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-bg-color);
+  .box {
+    position: relative;
+    width: 90%;
+    max-width: 1280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    .profile {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      width: 40%;
+      max-width: 300px;
+      box-shadow: 0 0 32px rgba(0, 0, 0, 0.2);
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 50%;
+        border: 2px solid var(--primary-border-color);
+        padding: 10px;
+        background: #fff;
+      }
+    }
+    .row {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      .position {
+        width: 80%;
+        max-width: 300px;
+        height: 100px;
+        position: relative;
+      }
+    }
+  }
+  .controlBtn {
+    position: fixed;
+    bottom: 0;
+    background: var(--primary-icon-color);
+    color: #fff;
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+    border-radius: 40px 40px 0 0;
+    padding: 7px 25px 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 16px;
+    transition: all 0.2s linear;
+    &:hover {
+      background: var(--primary-btn-hover-color);
+    }
+    img {
+      position: absolute;
+      width: 30px;
+      height: auto;
+      transition: all 0.2s linear;
+      display: block;
+      bottom: 100%;
+      animation: updown 1s linear infinite;
+      opacity: 0.4;
+    }
+  }
+  @media (max-width: 1440px) {
+    .box {
+      gap: 20px;
+    }
+  }
+  @media (max-width: 1180px) {
+    .profile {
+      display: none;
+    }
+  }
+  @media (max-width: 912px) {
+    .box {
+      .row {
+        justify-content: center;
+        gap: 20px;
+      }
+    }
+    .position {
+      display: none;
+    }
+  }
+  @media (max-width: 767px) {
+    .box {
+      .row {
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
