@@ -1,0 +1,16 @@
+.customerItem {
+  font-size: 15px !important;
+  .stt {
+    text-align: center;
+  }
+  .customer {
+    a {
+      color: var(--primary-icon-color);
+      transition: all 0.2s linear;
+      &:hover {
+        color: var(--primary-btn-hover-color);
+        text-decoration: underline;
+      }
+    }
+  }
+}

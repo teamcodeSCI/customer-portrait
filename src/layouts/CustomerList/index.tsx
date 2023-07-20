@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './customerList.module.scss';
+import CustomerItem from '@/components/CustomerItem';
 
 const CustomerList = () => {
   return (
@@ -28,136 +29,7 @@ const CustomerList = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>20/07/2023</td>
-                <td>Tiểu phẫu</td>
-                <td>8:30</td>
-                <td>Nguyễn Trà My</td>
-                <td></td>
-                <td>KN123</td>
-                <td>Đã thanh toán</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>20/07/2023</td>
-                <td>Tiểu phẫu</td>
-                <td>8:30</td>
-                <td>Nguyễn Trà My</td>
-                <td></td>
-                <td>KN123</td>
-                <td>Đã thanh toán</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>20/07/2023</td>
-                <td>Tiểu phẫu</td>
-                <td>8:30</td>
-                <td>Nguyễn Trà My</td>
-                <td></td>
-                <td>KN123</td>
-                <td>Đã thanh toán</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>20/07/2023</td>
-                <td>Tiểu phẫu</td>
-                <td>8:30</td>
-                <td>Nguyễn Trà My</td>
-                <td></td>
-                <td>KN123</td>
-                <td>Đã thanh toán</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>20/07/2023</td>
-                <td>Tiểu phẫu</td>
-                <td>8:30</td>
-                <td>Nguyễn Trà My</td>
-                <td></td>
-                <td>KN123</td>
-                <td>Đã thanh toán</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>20/07/2023</td>
-                <td>Tiểu phẫu</td>
-                <td>8:30</td>
-                <td>Nguyễn Trà My</td>
-                <td></td>
-                <td>KN123</td>
-                <td>Đã thanh toán</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>20/07/2023</td>
-                <td>Tiểu phẫu</td>
-                <td>8:30</td>
-                <td>Nguyễn Trà My</td>
-                <td></td>
-                <td>KN123</td>
-                <td>Đã thanh toán</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>20/07/2023</td>
-                <td>Tiểu phẫu</td>
-                <td>8:30</td>
-                <td>Nguyễn Trà My</td>
-                <td></td>
-                <td>KN123</td>
-                <td>Đã thanh toán</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>20/07/2023</td>
-                <td>Tiểu phẫu</td>
-                <td>8:30</td>
-                <td>Nguyễn Trà My</td>
-                <td></td>
-                <td>KN123</td>
-                <td>Đã thanh toán</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>20/07/2023</td>
-                <td>Tiểu phẫu</td>
-                <td>8:30</td>
-                <td>Nguyễn Trà My</td>
-                <td></td>
-                <td>KN123</td>
-                <td>Đã thanh toán</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
+              <CustomerItem />
             </tbody>
           </table>
         </div>
