@@ -1,7 +1,16 @@
+import { Routes, Route, Navigate } from 'react-router-dom';
+
 import Profile from './layouts/Profile';
+import CustomerList from './layouts/CustomerList';
 
 function App() {
-  return <Profile />;
+  return (
+    <Routes>
+      <Route path="/" element={<CustomerList />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="*" element={<Navigate to={'/'} />} />
+    </Routes>
+  );
 }
 
 export default App;
