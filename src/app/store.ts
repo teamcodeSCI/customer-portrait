@@ -1,4 +1,5 @@
 import customerSlice from '@/features/customer/customerSlice';
+import customerListSlice from '@/features/customerList/customerListSlice';
 import desireSlice from '@/features/desire/desireSlice';
 import familySlice from '@/features/family/familySlice';
 import financeSlice from '@/features/finance/financeSlice';
@@ -22,6 +23,7 @@ const rootReducer = combineReducers({
   family: familySlice.reducer,
   personality: personalitySlice.reducer,
   worry: worrySlice.reducer,
+  customerList: customerListSlice.reducer,
 });
 const store = configureStore({
   reducer: rootReducer,
