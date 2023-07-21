@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './customerList.module.scss';
 import CustomerItem from '@/components/CustomerItem';
+import Loading from '@/components/Loading';
 
 const data: any[] = [
   {
@@ -78,6 +79,7 @@ const data: any[] = [
 const CustomerList = () => {
   return (
     <div className={style['customerList']}>
+      <Loading />
       <div className="container" style={{ zIndex: 1 }}>
         <div className={style['header']}>Theo dõi và phân công thực hiện nhiệm vụ</div>
         <div className={style['table']}>
@@ -108,6 +110,7 @@ const CustomerList = () => {
             </tbody>
           </table>
         </div>
+        :L
       </div>
     </div>
   );
