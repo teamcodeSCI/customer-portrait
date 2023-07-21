@@ -110,7 +110,6 @@ const CustomerList = () => {
             </tbody>
           </table>
         </div>
-        :L
       </div>
     </div>
   );
