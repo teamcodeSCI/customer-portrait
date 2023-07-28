@@ -62,15 +62,16 @@ const Profile = () => {
   const handleOpenHistory: React.MouseEventHandler = () => {
     setIsOpenHistory(!isOpenHistory);
   };
+
   useEffect(() => {
     dispatch(fetchCustomer());
-    dispatch(fetchDesire());
-    dispatch(fetchHobby());
-    dispatch(fetchFinance());
-    dispatch(fetchTarget());
-    dispatch(fetchFamily());
-    dispatch(fetchPersonality());
-    dispatch(fetchWorry());
+    // dispatch(fetchDesire());
+    // dispatch(fetchHobby());
+    // dispatch(fetchFinance());
+    // dispatch(fetchTarget());
+    // dispatch(fetchFamily());
+    // dispatch(fetchPersonality());
+    // dispatch(fetchWorry());
   }, [dispatch]);
   return (
     <div className={style['app']}>

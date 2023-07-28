@@ -23,9 +23,10 @@ const customerSlice = createSlice({
       .addCase(fetchCustomer.fulfilled, (state, action) => {
         state.loading = false;
         state.loaded = true;
-        state.customer = action.payload.data;
+        state.customer = action.payload;
       })
       .addCase(fetchCustomer.rejected, (state, action) => {
+        console.log('action: ', action);
         state.loading = false;
         state.loaded = false;
       });

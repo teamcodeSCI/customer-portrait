@@ -18,3 +18,18 @@ export const useOutside = (ref: any, func: any) => {
     };
   }, [ref, func]);
 };
+export const gender = (str: string): string => {
+  let gender: string;
+  switch (str) {
+    case 'male':
+      gender = 'Nam';
+      break;
+    case 'female':
+      gender = 'Nữ';
+      break;
+    default:
+      gender = str;
+      break;
+  }
+  return gender;
+};
