@@ -76,14 +76,14 @@ const Profile = () => {
             title="Nỗi lo lắng"
             img={`${process.env.PUBLIC_URL}/assets/icons/sad.svg`}
             page={<Worries />}
-
+            expandData={worryArr}
             delay={1.6}
           />
           <Card
             title="Mong muốn"
             img={`${process.env.PUBLIC_URL}/assets/icons/star.svg`}
             page={<Desire />}
-
+            expandData={desireArr}
             delay={0.4}
           />
         </div>
@@ -92,7 +92,7 @@ const Profile = () => {
             title="Tính cách"
             img={`${process.env.PUBLIC_URL}/assets/icons/heart.svg`}
             page={<Personality />}
-
+            expandData={personalityArr}
             delay={1.4}
           />
           <div className={style['position']}></div>
@@ -100,7 +100,7 @@ const Profile = () => {
             title="Sở thích"
             img={`${process.env.PUBLIC_URL}/assets/icons/like.svg`}
             page={<Hobby />}
-
+            expandData={hobbyArr}
             delay={0.6}
           />
         </div>
@@ -109,14 +109,14 @@ const Profile = () => {
             title="Gia đình/tình trạng hôn nhân"
             img={`${process.env.PUBLIC_URL}/assets/icons/users.svg`}
             page={<Family />}
-
+            expandData={familyArr}
             delay={1.2}
           />
           <Card
             title="Tài chính"
             img={`${process.env.PUBLIC_URL}/assets/icons/money.svg`}
             page={<Finance />}
-
+            expandData={financeArr}
             delay={0.8}
           />
         </div>
@@ -125,7 +125,7 @@ const Profile = () => {
             title="Mục tiêu và nỗi lo cuộc sống"
             img={`${process.env.PUBLIC_URL}/assets/icons/check.svg`}
             page={<Target />}
-
+            expandData={targetArr}
             delay={1}
           />
         </div>

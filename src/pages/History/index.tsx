@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import style from './history.module.scss';
 import { useAppDispatch, useAppSelector } from '@/app/hook';
-import { historyListSelector, loadedHistorySelector, loadingHistorySelector } from '@/features/history/historySlice';
+
 import { fetchHistory } from '@/features/history/historyApi';
 import Search from '@/components/Search';
 import HistoryListItem from '@/components/HistoryListItem';
+import { customerSelector } from '@/features/customer/customerSlice';
 
 interface SearchState {
   booking: string;
@@ -12,9 +13,9 @@ interface SearchState {
 }
 const History = () => {
   const dispatch = useAppDispatch();
-  const loadedHistory = useAppSelector(loadedHistorySelector);
-  const loadingHistory = useAppSelector(loadingHistorySelector);
-  const historyList = useAppSelector(historyListSelector);
+
+  const historyList = useAppSelector(customerSelector);
+  console.log(historyList.data.list_tham_kham);
 
   const [search, setSearch] = useState<SearchState>({ booking: '', date: '' });
   const handleSearch: React.ChangeEventHandler<HTMLInputElement> = (e) => {
@@ -45,20 +46,19 @@ const History = () => {
             <span className={style['action']}>Hành động</span>
           </div>
           <div className={style['content']}>
-            {!loadingHistory
-              ? loadedHistory &&
-              historyList.map((item: any, idx: number) => (
+            {
+              historyList.data.list_tham_kham.map((item: any, idx: number) => (
                 <HistoryListItem
                   key={item.id}
                   id={item.id}
                   stt={idx}
-                  bookingCode={item.bookingCode}
-                  consultationDay={item.consultationDay}
-                  implementationDate={item.implementationDate}
+                  bookingCode={item.name}
+                  consultationDay={item.date}
+                  implementationDate={item.date}
                   receptionist={item.receptionist}
                 />
               ))
-              : ''}
+            }
           </div>
         </div>
       </div>
