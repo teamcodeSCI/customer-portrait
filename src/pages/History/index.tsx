@@ -47,17 +47,17 @@ const History = () => {
           <div className={style['content']}>
             {!loadingHistory
               ? loadedHistory &&
-                historyList.map((item, idx) => (
-                  <HistoryListItem
-                    key={item.id}
-                    id={item.id}
-                    stt={idx}
-                    bookingCode={item.bookingCode}
-                    consultationDay={item.consultationDay}
-                    implementationDate={item.implementationDate}
-                    receptionist={item.receptionist}
-                  />
-                ))
+              historyList.map((item: any, idx: number) => (
+                <HistoryListItem
+                  key={item.id}
+                  id={item.id}
+                  stt={idx}
+                  bookingCode={item.bookingCode}
+                  consultationDay={item.consultationDay}
+                  implementationDate={item.implementationDate}
+                  receptionist={item.receptionist}
+                />
+              ))
               : ''}
           </div>
         </div>

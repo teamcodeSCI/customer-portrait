@@ -4,21 +4,8 @@ import style from './profile.module.scss';
 
 import { useAppDispatch, useAppSelector } from '@/app/hook';
 import { customerSelector, loadedCustomerSelector } from '@/features/customer/customerSlice';
-import { desireSelector, loadedDesireSelector } from '@/features/desire/desireSlice';
-import { hobbySelector, loadedHobbySelector } from '@/features/hobby/hobbySlice';
-import { financeSelector, loadedFinanceSelector } from '@/features/finance/financeSlice';
-import { loadedTargetSelector, targetSelector } from '@/features/target/targetSlice';
-import { familySelector, loadedFamilySelector } from '@/features/family/familySlice';
-import { loadedPersonalitySelector, personalitySelector } from '@/features/personality/personalitySlice';
-import { loadedWorrySelector, worrySelector } from '@/features/worry/worrySlice';
 import { fetchCustomer } from '@/features/customer/customerApi';
-import { fetchDesire } from '@/features/desire/desireApi';
-import { fetchHobby } from '@/features/hobby/hobbyApi';
-import { fetchFinance } from '@/features/finance/financeApi';
-import { fetchTarget } from '@/features/target/targetApi';
-import { fetchFamily } from '@/features/family/familyApi';
-import { fetchPersonality } from '@/features/personality/personalityApi';
-import { fetchWorry } from '@/features/worry/worryApi';
+
 import Card from '@/components/Card';
 import History from '@/pages/History';
 import CustomerInfo from '@/pages/CustomerInfo';
@@ -30,49 +17,43 @@ import Hobby from '@/pages/Hobby';
 import Family from '@/pages/Family';
 import Finance from '@/pages/Finance';
 import Target from '@/pages/Target';
+import { useSearchParams } from 'react-router-dom';
 const Profile = () => {
   const dispatch = useAppDispatch();
+  const [searchParams] = useSearchParams()
+  const companyId = searchParams.get('company_id')
+  const partnerId = searchParams.get('partner_id')
   const [isOpenHistory, setIsOpenHistory] = useState<boolean>(false);
-  const profileData = useAppSelector(customerSelector);
-  const loadedProfile = useAppSelector(loadedCustomerSelector);
 
-  const desireData = useAppSelector(desireSelector);
-  const loadedDesire = useAppSelector(loadedDesireSelector);
+  const data = useAppSelector(customerSelector);
+  const loaded = useAppSelector(loadedCustomerSelector);
+  // console.log(loaded && data.data);
+  const profile = loaded && data.data.thong_tin_chung[0]
+  const desire = loaded && data.data.mong_muon
+  const hobby = loaded && data.data.so_thich
+  const finance = loaded && data.data.tai_chinh
+  const target = loaded && data.data.muc_tieu
+  const family = loaded && data.data.gia_dinh
+  const personality = loaded && data.data.tinh_cach
+  const worry = loaded && data.data.noi_lo_lang
 
-  const hobbyData = useAppSelector(hobbySelector);
-  const loadedHobby = useAppSelector(loadedHobbySelector);
+  const profileArr: unknown[] = Object.values(profile).map((e) => e);
+  const desireArr: unknown[] = Object.values(desire).map((e) => e);
+  const hobbyArr: unknown[] = Object.values(hobby).map((e) => e);
+  const financeArr: unknown[] = Object.values(finance).map((e) => e);
+  const targetArr: unknown[] = Object.values(target).map((e) => e);
+  const familyArr: unknown[] = Object.values(family).map((e) => e);
+  const personalityArr: unknown[] = Object.values(personality).map((e) => e);
+  const worryArr: unknown[] = Object.values(worry).map((e) => e);
 
-  const financeData = useAppSelector(financeSelector);
-  const loadedFinance = useAppSelector(loadedFinanceSelector);
-
-  const targetData = useAppSelector(targetSelector);
-  const loadedTarget = useAppSelector(loadedTargetSelector);
-
-  const familyData = useAppSelector(familySelector);
-  const loadedFamily = useAppSelector(loadedFamilySelector);
-
-  const personalityData = useAppSelector(personalitySelector);
-  const loadedPersonality = useAppSelector(loadedPersonalitySelector);
-
-  const worryData = useAppSelector(worrySelector);
-  const loadedWorry = useAppSelector(loadedWorrySelector);
-
-  let profileArr: any = loadedProfile && Object.values(profileData).map((e) => e);
 
   const handleOpenHistory: React.MouseEventHandler = () => {
     setIsOpenHistory(!isOpenHistory);
   };
 
   useEffect(() => {
-    dispatch(fetchCustomer());
-    // dispatch(fetchDesire());
-    // dispatch(fetchHobby());
-    // dispatch(fetchFinance());
-    // dispatch(fetchTarget());
-    // dispatch(fetchFamily());
-    // dispatch(fetchPersonality());
-    // dispatch(fetchWorry());
-  }, [dispatch]);
+    dispatch(fetchCustomer({ companyId: Number(companyId), partnerId: Number(partnerId) }));
+  }, [dispatch, companyId, partnerId]);
   return (
     <div className={style['app']}>
       <div className={style['box']}>
@@ -95,14 +76,14 @@ const Profile = () => {
             title="Nỗi lo lắng"
             img={`${process.env.PUBLIC_URL}/assets/icons/sad.svg`}
             page={<Worries />}
-            expandData={loadedWorry && worryData[0].desire}
+
             delay={1.6}
           />
           <Card
             title="Mong muốn"
             img={`${process.env.PUBLIC_URL}/assets/icons/star.svg`}
             page={<Desire />}
-            expandData={loadedDesire && desireData[0].desire}
+
             delay={0.4}
           />
         </div>
@@ -111,7 +92,7 @@ const Profile = () => {
             title="Tính cách"
             img={`${process.env.PUBLIC_URL}/assets/icons/heart.svg`}
             page={<Personality />}
-            expandData={loadedPersonality && personalityData[0].desire}
+
             delay={1.4}
           />
           <div className={style['position']}></div>
@@ -119,7 +100,7 @@ const Profile = () => {
             title="Sở thích"
             img={`${process.env.PUBLIC_URL}/assets/icons/like.svg`}
             page={<Hobby />}
-            expandData={loadedHobby && hobbyData[0].desire}
+
             delay={0.6}
           />
         </div>
@@ -128,14 +109,14 @@ const Profile = () => {
             title="Gia đình/tình trạng hôn nhân"
             img={`${process.env.PUBLIC_URL}/assets/icons/users.svg`}
             page={<Family />}
-            expandData={loadedFamily && familyData[0].desire}
+
             delay={1.2}
           />
           <Card
             title="Tài chính"
             img={`${process.env.PUBLIC_URL}/assets/icons/money.svg`}
             page={<Finance />}
-            expandData={loadedFinance && financeData[0].desire}
+
             delay={0.8}
           />
         </div>
@@ -144,7 +125,7 @@ const Profile = () => {
             title="Mục tiêu và nỗi lo cuộc sống"
             img={`${process.env.PUBLIC_URL}/assets/icons/check.svg`}
             page={<Target />}
-            expandData={loadedTarget && targetData[0].desire}
+
             delay={1}
           />
         </div>

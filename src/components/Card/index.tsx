@@ -5,7 +5,7 @@ import Modal from '@/layouts/Modal';
 interface CardProps {
   title: string;
   page: JSX.Element;
-  expandData: any;
+  expandData?: any;
   img: string;
   delay: number;
 }

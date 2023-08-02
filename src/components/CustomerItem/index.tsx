@@ -24,7 +24,7 @@ const CustomerItem = (props: CustomerItemProps) => {
       <td>{props.department}</td>
       <td>{props.time}</td>
       <td className={style['customer']}>
-        <Link to={`/profile/${props.customerId}`}>{props.name}</Link>
+        <Link to={`/profile?company_id=4&partner_id=631953`}>{props.name}</Link>
       </td>
       <td>{props.service}</td>
       <td>{props.account}</td>

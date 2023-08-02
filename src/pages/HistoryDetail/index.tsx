@@ -87,17 +87,17 @@ const HistoryDetail = ({ handleOpenDetail }: HistoryDetailProps) => {
               <div className={style['content']}>
                 {!loadingHistoryDetail
                   ? loadedHistoryDetail &&
-                    historyListDetail.map((item, idx) => (
-                      <div key={item.id} className={style['item']}>
-                        <span className={style['stt']}>{idx + 1}</span>
-                        <span className={style['service']}>{item.service}</span>
-                        <span className={style['status']}>{item.status}</span>
-                        <span className={style['advise']}>{item.advise}</span>
-                        <span className={style['reExamination']}>{item.reExamination}</span>
-                        <span className={style['adviseDoctor']}>{item.adviseDoctor}</span>
-                        <span className={style['performedDoctor']}>{item.performedDoctor}</span>
-                      </div>
-                    ))
+                  historyListDetail.map((item: any, idx: number) => (
+                    <div key={item.id} className={style['item']}>
+                      <span className={style['stt']}>{idx + 1}</span>
+                      <span className={style['service']}>{item.service}</span>
+                      <span className={style['status']}>{item.status}</span>
+                      <span className={style['advise']}>{item.advise}</span>
+                      <span className={style['reExamination']}>{item.reExamination}</span>
+                      <span className={style['adviseDoctor']}>{item.adviseDoctor}</span>
+                      <span className={style['performedDoctor']}>{item.performedDoctor}</span>
+                    </div>
+                  ))
                   : ''}
               </div>
             </div>
