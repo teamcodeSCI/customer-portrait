@@ -19,6 +19,7 @@ const HistoryDetail = ({ handleOpenDetail }: HistoryDetailProps) => {
   const loadedHistoryDetail = useAppSelector(loadedHistoryDetailSelector);
   const loadingHistoryDetail = useAppSelector(loadingHistoryDetailSelector);
   const historyListDetail = useAppSelector(historyDetailListSelector);
+  console.log("historyListDetail: ", historyListDetail);
   const modalVariants = {
     hidden: {
       y: '10%',

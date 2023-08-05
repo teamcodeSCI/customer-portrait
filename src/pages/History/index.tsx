@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import style from './history.module.scss';
-import { useAppDispatch, useAppSelector } from '@/app/hook';
+import { useAppSelector } from '@/app/hook';
 
-import { fetchHistory } from '@/features/history/historyApi';
+
 import Search from '@/components/Search';
 import HistoryListItem from '@/components/HistoryListItem';
 import { customerSelector } from '@/features/customer/customerSlice';
@@ -12,19 +12,16 @@ interface SearchState {
   date: string;
 }
 const History = () => {
-  const dispatch = useAppDispatch();
+
 
   const historyList = useAppSelector(customerSelector);
-  console.log(historyList.data.list_tham_kham);
 
   const [search, setSearch] = useState<SearchState>({ booking: '', date: '' });
   const handleSearch: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setSearch({ ...search, [e.target.name]: e.target.value });
   };
 
-  useEffect(() => {
-    dispatch(fetchHistory());
-  }, [dispatch]);
+
   return (
     <div className="container">
       <div className={style['control']}>

@@ -26,8 +26,9 @@ const Profile = () => {
   const [isOpenHistory, setIsOpenHistory] = useState<boolean>(false);
 
   const data = useAppSelector(customerSelector);
+  console.log("data: ", data);
   const loaded = useAppSelector(loadedCustomerSelector);
-  // console.log(loaded && data.data);
+
   const profile = loaded && data.data.thong_tin_chung[0]
   const desire = loaded && data.data.mong_muon
   const hobby = loaded && data.data.so_thich
@@ -59,7 +60,7 @@ const Profile = () => {
       <div className={style['box']}>
         <div className={style['profile']}>
           <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ ease: 'linear' }}>
-            <img width={828} height={828} src={`${process.env.PUBLIC_URL}/assets/images/profile.jpg`} alt="" />
+            <img width={828} height={828} src={profile.images || `${process.env.PUBLIC_URL}/assets/icons/user.svg`} alt="" />
           </motion.div>
         </div>
         <div className={style['row']}>
