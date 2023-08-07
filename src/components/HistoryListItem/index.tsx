@@ -31,7 +31,7 @@ const HistoryListItem = ({
       <span className={style['consultationDay']}>{consultationDay}</span>
       <span className={style['implementationDate']}>{implementationDate}</span>
       <span className={style['receptionist']}>{receptionist}</span>
-      <span className={style['action']} onClick={handleOpenDetail}>
+      <span className={style['action']} >
         Xem chi tiết
       </span>
       <AnimatePresence>{isOpenDetail && <HistoryDetail handleOpenDetail={handleOpenDetail} />}</AnimatePresence>
