@@ -54,7 +54,7 @@ const Profile = () => {
       <div className={style['box']}>
         <div className={style['profile']}>
           <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ ease: 'linear' }}>
-            <img width={828} height={828} src={profile.images || `${process.env.PUBLIC_URL}/assets/icons/user.svg`} alt="" />
+            <img width={828} height={828} src={profile.images || `${process.env.PUBLIC_URL}/assets/images/no-image.jpg`} alt="" />
           </motion.div>
         </div>
         <div className={style['row']}>
