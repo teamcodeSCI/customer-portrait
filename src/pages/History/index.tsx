@@ -12,15 +12,12 @@ interface SearchState {
   date: string;
 }
 const History = () => {
-
-
   const historyList = useAppSelector(customerSelector);
 
   const [search, setSearch] = useState<SearchState>({ booking: '', date: '' });
   const handleSearch: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setSearch({ ...search, [e.target.name]: e.target.value });
   };
-
 
   return (
     <div className="container">

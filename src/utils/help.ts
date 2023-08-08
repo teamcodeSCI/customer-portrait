@@ -33,3 +33,18 @@ export const gender = (str: string): string => {
   }
   return gender;
 };
+export const setAddress = ({
+  street,
+  district_name,
+  state_name,
+  country_name,
+}: {
+  street: string;
+  district_name: string;
+  state_name: string;
+  country_name: string;
+}) => {
+  return `${street !== '' ? `${street}, ` : ''}${district_name !== '' ? `${district_name}, ` : ''}${
+    state_name !== '' ? `${state_name}, ` : ''
+  }${country_name}`;
+};

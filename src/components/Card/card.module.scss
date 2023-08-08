@@ -69,6 +69,12 @@
         display: flex;
         flex-direction: column;
         gap: 3px;
+        li {
+          text-overflow: ellipsis;
+          display: block;
+          white-space: nowrap;
+          overflow: hidden;
+        }
       }
       span {
         display: block;

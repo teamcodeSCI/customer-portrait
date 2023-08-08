@@ -2,6 +2,7 @@ import React from 'react';
 import style from './customerInfo.module.scss';
 import { useAppSelector } from '@/app/hook';
 import { customerSelector } from '@/features/customer/customerSlice';
+import { setAddress } from '@/utils/help';
 
 const CustomerInfo = () => {
   const customer = useAppSelector(customerSelector);
@@ -47,7 +48,9 @@ const CustomerInfo = () => {
             </li>
             <li>
               <b>Địa chỉ: </b>
-              <span>{`${data.street}, ${data.district_name}, ${data.state_name}, ${data.country_name}`}</span>
+              <span>{setAddress({
+                street: data.street, district_name: data.district_name, state_name: data.state_name, country_name: data.country_name
+              })}</span>
             </li>
           </ul>
         </div>

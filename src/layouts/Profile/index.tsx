@@ -18,6 +18,7 @@ import Family from '@/pages/Family';
 import Finance from '@/pages/Finance';
 import Target from '@/pages/Target';
 import { useSearchParams } from 'react-router-dom';
+import { gender } from '@/utils/help';
 const Profile = () => {
   const dispatch = useAppDispatch();
   const [searchParams] = useSearchParams()
@@ -26,30 +27,23 @@ const Profile = () => {
   const [isOpenHistory, setIsOpenHistory] = useState<boolean>(false);
 
   const data = useAppSelector(customerSelector);
-  console.log("data: ", data);
+
   const loaded = useAppSelector(loadedCustomerSelector);
 
   const profile = loaded && data.data.thong_tin_chung[0]
-  const desire = loaded && data.data.mong_muon
-  const hobby = loaded && data.data.so_thich
-  const finance = loaded && data.data.tai_chinh
-  const target = loaded && data.data.muc_tieu
-  const family = loaded && data.data.gia_dinh
-  const personality = loaded && data.data.tinh_cach
-  const worry = loaded && data.data.noi_lo_lang
+  const desire = loaded && data.data.mong_muon[0].data
+  const hobby = loaded && data.data.so_thich[0].data
+  const finance = loaded && data.data.tai_chinh[0].data
+  const target = loaded && data.data.muc_tieu[0].data
+  const family = loaded && data.data.gia_dinh[0].data
+  const personality = loaded && data.data.tinh_cach[0].data
+  const worry = loaded && data.data.noi_lo_lang[0].data
 
-  const profileArr: unknown[] = Object.values(profile).map((e) => e);
-  const desireArr: unknown[] = Object.values(desire).map((e) => e);
-  const hobbyArr: unknown[] = Object.values(hobby).map((e) => e);
-  const financeArr: unknown[] = Object.values(finance).map((e) => e);
-  const targetArr: unknown[] = Object.values(target).map((e) => e);
-  const familyArr: unknown[] = Object.values(family).map((e) => e);
-  const personalityArr: unknown[] = Object.values(personality).map((e) => e);
-  const worryArr: unknown[] = Object.values(worry).map((e) => e);
+  const profileArr = Object.values(profile).map((e: any) => gender(e));
 
 
   const handleOpenHistory: React.MouseEventHandler = () => {
-    setIsOpenHistory(!isOpenHistory);
+    // setIsOpenHistory(!isOpenHistory);
   };
 
   useEffect(() => {
@@ -77,14 +71,14 @@ const Profile = () => {
             title="Nỗi lo lắng"
             img={`${process.env.PUBLIC_URL}/assets/icons/sad.svg`}
             page={<Worries />}
-            expandData={worryArr}
+            expandData={worry}
             delay={1.6}
           />
           <Card
             title="Mong muốn"
             img={`${process.env.PUBLIC_URL}/assets/icons/star.svg`}
             page={<Desire />}
-            expandData={desireArr}
+            expandData={desire}
             delay={0.4}
           />
         </div>
@@ -93,7 +87,7 @@ const Profile = () => {
             title="Tính cách"
             img={`${process.env.PUBLIC_URL}/assets/icons/heart.svg`}
             page={<Personality />}
-            expandData={personalityArr}
+            expandData={personality}
             delay={1.4}
           />
           <div className={style['position']}></div>
@@ -101,7 +95,7 @@ const Profile = () => {
             title="Sở thích"
             img={`${process.env.PUBLIC_URL}/assets/icons/like.svg`}
             page={<Hobby />}
-            expandData={hobbyArr}
+            expandData={hobby}
             delay={0.6}
           />
         </div>
@@ -110,14 +104,14 @@ const Profile = () => {
             title="Gia đình/tình trạng hôn nhân"
             img={`${process.env.PUBLIC_URL}/assets/icons/users.svg`}
             page={<Family />}
-            expandData={familyArr}
+            expandData={family}
             delay={1.2}
           />
           <Card
             title="Tài chính"
             img={`${process.env.PUBLIC_URL}/assets/icons/money.svg`}
             page={<Finance />}
-            expandData={financeArr}
+            expandData={finance}
             delay={0.8}
           />
         </div>
@@ -126,7 +120,7 @@ const Profile = () => {
             title="Mục tiêu và nỗi lo cuộc sống"
             img={`${process.env.PUBLIC_URL}/assets/icons/check.svg`}
             page={<Target />}
-            expandData={targetArr}
+            expandData={target}
             delay={1}
           />
         </div>
