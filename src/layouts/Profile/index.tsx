@@ -31,13 +31,13 @@ const Profile = () => {
   const loaded = useAppSelector(loadedCustomerSelector);
 
   const profile = loaded && data.data.thong_tin_chung[0]
-  const desire = loaded && data.data.mong_muon[0].data
-  const hobby = loaded && data.data.so_thich[0].data
-  const finance = loaded && data.data.tai_chinh[0].data
-  const target = loaded && data.data.muc_tieu[0].data
-  const family = loaded && data.data.gia_dinh[0].data
-  const personality = loaded && data.data.tinh_cach[0].data
-  const worry = loaded && data.data.noi_lo_lang[0].data
+  const desire = loaded && data.data.mong_muon.length !== 0 ? data.data.mong_muon[0].data : []
+  const hobby = loaded && data.data.so_thich.length !== 0 ? data.data.so_thich[0].data : []
+  const finance = loaded && data.data.tai_chinh.length !== 0 ? data.data.tai_chinh[0].data : []
+  const target = loaded && data.data.muc_tieu.length !== 0 ? data.data.muc_tieu[0].data : []
+  const family = loaded && data.data.gia_dinh.length !== 0 ? data.data.gia_dinh[0].data : []
+  const personality = loaded && data.data.tinh_cach.length !== 0 ? data.data.tinh_cach[0].data : []
+  const worry = loaded && data.data.noi_lo_lang.length !== 0 ? data.data.noi_lo_lang[0].data : []
 
   const profileArr = Object.values(profile).map((e: any) => gender(e));
 
