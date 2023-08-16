@@ -7,6 +7,7 @@ import { setAddress } from '@/utils/help';
 const CustomerInfo = () => {
   const customer = useAppSelector(customerSelector);
   const data = customer.data.thong_tin_chung[0]
+  console.log("data: ", data);
   let gender: string = ''
   if (data.gender === 'female') {
     gender = 'Nữ'
@@ -20,7 +21,7 @@ const CustomerInfo = () => {
     <div className="container">
       <div className={style['box']}>
         <div className={style['img']}>
-          <img width={828} height={828} src={`${process.env.PUBLIC_URL}/assets/images/profile.jpg`} alt="" />
+          <img width={828} height={828} src={data.images || `${process.env.PUBLIC_URL}/assets/images/no-image.jpg`} alt="" />
         </div>
 
         <div className={style['customerInfo']}>
