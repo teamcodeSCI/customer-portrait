@@ -7,7 +7,6 @@ import { setAddress } from '@/utils/help';
 const CustomerInfo = () => {
   const customer = useAppSelector(customerSelector);
   const data = customer.data.thong_tin_chung[0]
-  console.log("data: ", data);
   let gender: string = ''
   if (data.gender === 'female') {
     gender = 'Nữ'
